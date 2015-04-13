@@ -1,4 +1,0 @@
-Things to add to my Oracle webpage:
-   1. Convert it to an ng-app
-   2. Use PHP to interact with database
-      - Or, use angular/jQuery to do it with a localhost
