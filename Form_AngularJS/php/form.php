@@ -28,6 +28,7 @@ $img = "";
 // 		default: return false;
 // 	}
 // }
+// // $target_path = "";
 // if(!empty($_FILES["imgPath"]["img"])){
 // 	$file_name = $_FILES["imgPath"]["img"];
 // 	$temp_name = $_FILES["imgPath"]["tmp_name"];
@@ -37,19 +38,12 @@ $img = "";
 // 	$target_path = "../imgs/".$imagename;
 
 // 	if(move_uploaded_file($temp_name, $target_path)){
-// 		$query_upload = "INSERT INTO ryan_student ".
-// 		"(id, first_name, last_name, grade, year_graduation, date_birth, classes, about, image) ".
+// 		$query_upload = "INSERT INTO ryan_image ".
+// 		"(images_path, submission_date) ".
 // 	"VALUES ". 
-// 		"(" . $id . "," . 
-// 		"'" . $firstName . "'," .
-// 		"'" . $lastName . "'," .
-// 		"'" . $grade . "'," .
-// 		"'" . $yog . "'," .
-// 		"'" . $dob . "',".
-// 		"'" . $classes . "'," .
-// 		"'" . $about . "'," .
-// 		"'" . $img . "')";
-// 		Database::addRow($query_upload);
+// 		"(" . $target_path . "," . 
+// 		"'" . date("Y-m-d") . "')";
+// 		mysql_query($query_upload) or die();
 // 	}
 // }
 
@@ -70,62 +64,63 @@ $sqlInsert =
 Database::addRow($sqlInsert);
 mysql_close();
 ?>
+<script type="text/javascript" src="../js/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="../dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="../js/script.js"></script>
+<link rel="stylesheet" type="text/css" href="../dist/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<nav class="navbar navbar-fixed-top navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <a class="navbar-brand" href="../#welcome" id="navbarBrand">School Profiles</a>
+          <li id="navbarWelcome" class="active"><a href="../#welcome">Welcome</a></li>
 
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport">
-    <title>Student Profiles</title>
-    <!-- JavaScript SCRIPTS -->
-    <script src="../js/angular/angular.min.js"></script>   <!-- ANGULAR -->
-    <script src="../js/angular-route/angular-route.min.js"></script>   <!-- ANGULAR ROUTE -->
-    <script src="../js/jquery-2.1.1.min.js"></script>      <!-- JQUERY -->
-    <script src="../dist/js/bootstrap.min.js"></script>   <!-- BOOTSTRAP -->
-    <script src="../dist/js/ui-bootstrap-0.12.0.min.js"></script>  <!-- BOOTSTRAP UI -->
-    <script src="../js/script.js"></script>
-    <!-- CSS STYLES -->
-    <link href="../dist/css/bootstrap.min.css" rel="stylesheet">   <!-- BOOTSTRAP -->
-    <link href="../css/style.css" rel="stylesheet">
-</head>
-<body>
-	<nav class="navbar navbar-fixed-top navbar-default" role="navigation">
-      <div class="container-fluid">
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <a class="navbar-brand" href="../#" id="navbarBrand">Student Profiles</a>
-            <li id="navbarWelcome"><a href="../#welcome">Welcome</a></li>
-            <li id="navbarSample"><a href="../#sample-profile">Sample Profile</a></li>
-            <li id="navbarNew" class="active"><a href="../#new-profile">New Profile</a></li>
-            <li id="navbarView"><a href="view-profiles.php">Manage Profiles</a></li>
-          </ul>
-        </div>
+          <li class="dropdown" id="navbarSample">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button">Sample Profiles<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="../#sample-student">Student Profile</a></li>
+              <li><a href="../#construction">Teacher Profile</a></li>
+              <li><a href="../#construction">Administrator Profile</a></li>
+            </ul>
+          </li>
+
+          <li class="dropdown" id="navbarNew">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button">New Profile<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="../#new-student">Student Profile</a></li>
+              <li><a href="../#construction">Teacher Profile</a></li>
+              <li><a href="../#construction">Administrator Profile</a></li>
+            </ul>
+          </li>
+
+          <li id="navbarManage"><a href="../#manage-profiles">Manage Profiles</a></li>
+        </ul>
       </div>
-    </nav>	
-    <div class="container" id="sample-profile">
-		<div class="row">
-			<div class="col-xs-6">
-			<h1 id="new-head"><?php echo($firstName); ?></h1>
-				<h4>Name: <?php echo($firstName . " " . $lastName); ?></h4>
-				<h4>Grade: <?php echo($grade); ?></h4> 
-				<h4>Year of Graduation: <?php echo($yog); ?></h4>
-				<h4>Date of Birth: <?php echo($dob); ?></h4>
-				<h4>Classes:</h4>
-				<ul id="classList">
-					<li><?php echo($classes); ?></li>
-				</ul>
-				<h4>About Me:</h4>
-				<ul id="classList">
-					<p><?php echo($about); ?></p>
-				</ul>
-			</div>
-			<div class="col-xs-1"></div>
-			<div class="col-xs-4">
-				<img src="../imgs/logo.jpg"></img>
-				<img id="portrait" src="../<?php echo($img); ?>"></img>
-			</div>
-			<div class="col-xs-1"></div>
+    </div>
+  </nav>
+<div class="container" id="sample-profile">
+	<div class="row">
+		<div class="col-xs-6">
+		<h1 id="new-head"><?php echo($firstName); ?></h1>
+			<h4>Name: <?php echo($firstName . " " . $lastName); ?></h4>
+			<h4>Grade: <?php echo($grade); ?></h4> 
+			<h4>Year of Graduation: <?php echo($yog); ?></h4>
+			<h4>Date of Birth: <?php echo($dob); ?></h4>
+			<h4>Classes:</h4>
+			<ul id="classList">
+				<li><?php echo($classes); ?></li>
+			</ul>
+			<h4>About Me:</h4>
+			<ul id="classList">
+				<p><?php echo($about); ?></p>
+			</ul>
 		</div>
+		<div class="col-xs-1"></div>
+		<div class="col-xs-4">
+			<img src="../imgs/logo.jpg"></img>
+			<!-- <img id="portrait" src="<?php echo($target_path); ?>"></img> -->
+		</div>
+		<div class="col-xs-1"></div>
 	</div>
-</body>
-</html>
+</div>

@@ -25,7 +25,7 @@ h1{
 
 h4 {
 	padding-top: 1.5vh;
-	font-family: sans-serif;
+	font-family: "Raleway-Light";
 }
 
 img {
@@ -105,17 +105,44 @@ h1#welcome-text{
 	color: #FFFEFD;
 }
 
-#profiles-table{
-
-	margin-top: 4vh;
-}
-
 #tableBtn {
-	margin-left: 3%;
+	float: right;
+	margin-right: 3%;
 }
 
 #checkbox-col{
 	position: relative;
 	top: 0px;
 	bottom: 0px;
+}
+
+.navbar{
+	font-family: "Raleway-Light";
+}
+
+#construction-row{
+	margin-top: 20vh;
+}
+
+#construction-img{
+	height: 50vh;
+	-webkit-filter: opacity(0.35);
+	filter: opacity(0.35);
+}
+
+#construction-btn-container {
+	margin-top: -20vh;
+}
+
+#construction-btn {
+	width: 75%;
+	font-family: "Raleway-Light";
+}
+
+#student-table-row{
+	margin-top: 5vh;
+}
+.panel-heading{
+	font-family: "Raleway-Light";
+	font-size: 20px;
 }
