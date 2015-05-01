@@ -1,0 +1,30 @@
+/* @author: Ryan Dean
+   @description: Styling for the web part of the live project.
+*/
+
+
+@import url(http://fonts.googleapis.com/css?family=Ek+Mukta:200);
+@font-face {
+	font-family: "Raleway-Light";
+	font-style: "sans-serif";
+	font-weight: "light";
+	src: url('../fonts/Raleway-Light.ttf');
+}
+
+#welcome-background{
+	-webkit-filter: blur(2px);
+}
+#welcome-header{
+	text-align: center;
+	margin-top: 25vh;
+	color: #FFFFFF;
+}
+
+h1{
+	font-family: 'Ek Mukta', sans-serif;
+	font-size: 5em;
+}
+
+body{
+	background-image: url("../imgs/welcome-background.jpg");
+}
