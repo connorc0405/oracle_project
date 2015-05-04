@@ -1,7 +1,0 @@
-1. Get rid of/ implement Angular JS for faster navigation
-2. Add buttons to edit tables
-3. Add user photo
-4. When a field is not filled, in highlight it in red and tell them to enter data
-5. Use Skeleton instead of bootstrap because it is lighter
-6. When the user clicks on a row, bring up a modal with the profile on it.
-7. Make the Date of Birth a date
