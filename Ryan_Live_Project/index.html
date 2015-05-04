@@ -1,0 +1,31 @@
+<!-- 
+ @author: Ryan Dean
+ @version: 1.0.0
+ @date: April 2015
+ @description: This is the index.html for the whole web part of the live project.  It provides all of the links to external files for the development and initializes the AngularJS part of the project for faster navigation.
+-->
+<!DOCTYPE html>
+<html lang="en" ng-app="databaseApp">
+<head>
+	<!-- METADATA -->
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>School Profiles</title>
+
+	<!-- CSS LINKS -->
+	<link href="dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!-- JAVASCRIPT LINKS -->
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script src="dist/js/bootstrap.min.js"></script>
+	<script src="js/angular/angular.min.js"></script>
+	<script src="js/angular-route/angular-route.min.js"></script>
+	<script src="js/script.js"></script>
+</head>
+<body>
+	<!-- Provides the div in which the ng-app will display its informaiton from the links -->
+	<div ng-view></div>
+</body>
+</html>
