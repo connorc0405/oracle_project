@@ -11,20 +11,21 @@
 	src: url('../fonts/Raleway-Light.ttf');
 }
 
-#welcome-background{
-	-webkit-filter: blur(2px);
-}
 #welcome-header{
 	text-align: center;
 	margin-top: 25vh;
-	color: #FFFFFF;
+
 }
 
 h1{
 	font-family: 'Ek Mukta', sans-serif;
 	font-size: 5em;
+	color: #FFFFFF;
+}
+.nav-container{
+	background-color: #FFFFFF;
 }
 
 body{
-	background-image: url("../imgs/welcome-background.jpg");
+	background: #5f6f81;
 }
