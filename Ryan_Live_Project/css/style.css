@@ -17,15 +17,60 @@
 
 }
 
+#welcome-detail{
+	margin-top: 10vh;
+}
+
+#welcome-third{
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-right-color: #FFFFFF;
+	height: 20vh;
+}
+
 h1{
 	font-family: 'Ek Mukta', sans-serif;
 	font-size: 5em;
 	color: #FFFFFF;
 }
+
+h3{
+	font-family: 'Ek Mukta', sans-serif;
+	font-size: 2.5em;
+	color: #FFFFFF;
+	text-align: center;
+}
+
+p{
+	font-family: 'Ek Mukta', sans-serif;
+	font-size: 1.5em;
+	color: #FFFFFF;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
 .nav-container{
 	background-color: #FFFFFF;
 }
 
 body{
 	background: #5f6f81;
+}
+
+#right{
+	float: right;
+}
+
+#students{
+	background: #F2F2F2;
+	height: 40vh;
+	width: 100%;
+}
+#intro{
+	height: 100vh;
+	
+}
+#sub-div{
+	text-align: center;
+	color: #000000;
 }

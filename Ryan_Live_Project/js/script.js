@@ -12,9 +12,19 @@ databaseApp.config(function($routeProvider) {
 		controller: 'welcome-ctrl'
 	})
 
+	.when('/construction',
+	{
+		templateUrl: 'html/construction.html',
+		controller: 'construction-ctrl'
+	})
+
 	.otherwise({redirectTo: '/'});
 });
 
 databaseApp.controller('welcome-ctrl', function($scope){
+
+});
+
+databaseApp.controller('construction-ctrl', function($scope){
 
 });
