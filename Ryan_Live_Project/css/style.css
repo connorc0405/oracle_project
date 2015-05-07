@@ -66,6 +66,16 @@ body{
 	height: 40vh;
 	width: 100%;
 }
+#admin{
+	background: #F2F2F2;
+	height: 40vh;
+	width: 100%;
+}
+#parents{
+	background: #FFFEFE;
+	height: 40vh;
+	width: 100%;
+}
 #intro{
 	height: 100vh;
 	
@@ -73,4 +83,21 @@ body{
 #sub-div{
 	text-align: center;
 	color: #000000;
+}
+#user{
+	color: #FFFFFF;
+	font-size: 3em;
+}
+
+.student-link{
+	cursor: pointer;
+}
+.parent-link{
+	cursor: pointer;
+}
+.admin-link{
+	cursor: pointer;
+}
+.third-text{
+	padding-top: 2vh;
 }
