@@ -10,7 +10,9 @@
 	font-weight: "light";
 	src: url('../fonts/Raleway-Light.ttf');
 }
-
+html{
+	-webkit-user-select: none;
+}
 #welcome-header{
 	text-align: center;
 	margin-top: 25vh;
@@ -88,7 +90,7 @@ body{
 	color: #FFFFFF;
 	font-size: 3em;
 }
-
+/*fix this so it is one class styling for efficency.*/
 .student-link{
 	cursor: pointer;
 }
@@ -100,4 +102,17 @@ body{
 }
 .third-text{
 	padding-top: 2vh;
+}
+#construction-img {
+	height: 40vh;
+	-webkit-filter: invert(100%);
+}
+#construction-row {
+	margin-top: 25vh;
+}
+#construction-text{
+	text-align: left
+}
+#construction-back-btn{
+	margin-top: -20vh;
 }
