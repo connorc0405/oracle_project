@@ -43,13 +43,21 @@
 								<input placeholder="Search" type="search" class="gn-search">
 								<a class="gn-icon gn-icon-search"><span>Search</span></a>
 							</li>
-							<li><a href="#construction">Your Profile</a></li>
+							<li><a href="#student-profile">Your Profile</a></li>
 							<li><a class="gn-icon gn-icon-cog">Settings</a></li>
 						</ul>
 					</div>
 				</nav>
 				<!-- Add case where there is a menu for those logged in and a menu for those who are not.  Make a class .active for the active tab on the menu -->
-				<li><a href="#">Student Profiles</a></li>
+				<!-- <li><a href="#">Student Profiles</a></li> -->
+				<li class="dropdown">
+					<a id="dropdownShow" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Select One<span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li id="studentTab"><a href="#construction">Student Profiles</a></li>
+						<li id="parentTab"><a href="#construction">Parent Profiles</a></li>
+						<li id="adminTab"><a href="#construction">Admin Profiles</a></li>
+					</ul>
+				</li>
 				<li id="right"><a href="#construction">Sign Up</a></li>
 				<li id="right"><a href="#construction">Log In</a></li>
 			</li>

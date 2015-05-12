@@ -116,3 +116,6 @@ body{
 #construction-back-btn{
 	margin-top: -20vh;
 }
+.dropdown-menu{
+	width: 100%;
+}
