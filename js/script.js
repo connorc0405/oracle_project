@@ -54,6 +54,7 @@ databaseApp.controller('welcome-ctrl', function($scope){
 	});
 	$('#adminTab').click(function(){
 		$('#dropdownShow').html('Admin Profiles');
+		
 	});
 });
 

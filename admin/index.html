@@ -1,0 +1,74 @@
+<!--
+	@author: Devon Thyne
+	@contributor: Ryan Dean
+	@description: The admin homepage that holds all of the database actions such as creating editing and viewing data.
+-->
+
+<!DOCTYPE html>
+<html ng-app="adminApp">
+	<meta charset="UTF-8">
+	<head>
+		<title>Admin</title>
+		<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- CSS LINKS -->
+		<link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="../nexus-nav/css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="../nexus-nav/css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="../nexus-nav/css/component.css" />
+		<link rel="shortcut icon" href="../nexus-nav/favicon.ico">
+		<link rel="shortcut icon" href="../../favicon.ico">
+
+		<!-- JAVASCRIPT LINKS -->
+		<script src="../js/jquery-2.1.1.min.js"></script>
+		<script src="../dist/js/bootstrap.min.js"></script>
+		<script src="../js/angular/angular.min.js"></script> 
+		<script src="../js/angular-route/angular-route.min.js"></script>
+		<script src="js/script.js"></script>
+		<script src="../nexus-nav/js/modernizr.custom.js"></script>
+	</head>
+
+	<body>
+	<div class="nav-container">
+		<ul id="gn-menu" class="gn-menu-main">
+			<li class="gn-trigger">
+				<a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+				<nav class="gn-menu-wrapper">
+					<div class="gn-scroller">
+						<ul class="gn-menu">
+							<li class="gn-search-item">
+								<input placeholder="Search" type="search" class="gn-search">
+								<a class="gn-icon gn-icon-search"><span>Search</span></a>
+							</li>
+							<li><a href="#student-profile">Your Profile</a></li>
+							<li><a class="gn-icon gn-icon-cog">Settings</a></li>
+						</ul>
+					</div>
+				</nav>
+				<!-- Add case where there is a menu for those logged in and a menu for those who are not.  Make a class .active for the active tab on the menu -->
+				<!-- <li><a href="#">Student Profiles</a></li> -->
+				<li class="dropdown">
+					<a id="dropdownShow" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin Profiles<span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li id="studentTab"><a href="#construction">Student Profiles</a></li>
+						<li id="parentTab"><a href="#construction">Parent Profiles</a></li>
+						<li id="adminTab"><a href="#">Admin Profiles</a></li>
+					</ul>
+				</li>
+				<li id="right"><a href="#construction">Sign Up</a></li>
+				<li id="right"><a href="#construction">Log In</a></li>
+			</li>
+		</ul>
+	</div>
+	<div ng-view></div>
+	<script src="../nexus-nav/js/classie.js"></script>
+	<script src="../nexus-nav/js/gnmenu.js"></script>
+	<script>
+		new gnMenu( document.getElementById( 'gn-menu' ) );
+	</script>
+	</body>
+</html>
