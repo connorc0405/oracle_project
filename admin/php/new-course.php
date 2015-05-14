@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html>
-<meta charset="UTF-8">
-	<head>
-		<title>New Course Log</title>
-	</head>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12">
+			<h1>Course Registration</h1>
+		</div>
+	</div>
+</div>
 
-	<body>
-		<center>
-			<img src="AMSA_logo.jpg" style="width:500px;height:225px">
-			<br>
-			<h2 id="heading">Course Registration</h2>
 			<br>
 
 			<form action="CourseProfile.php" method="post" enctype="multipart/form-data">

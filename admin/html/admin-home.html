@@ -1,65 +1,85 @@
 <div class="container">
 	<div class="row">
-		<div class="col-xs-12" id="home-header">
+		<div class="col-xs-12"  id="welcome-header">
 			<h1>Admin Home</h1>
 		</div>
 	</div>
 	<div class="row" id="home-buttons">
-		<div class="col-xs-2"></div>
-		<div class="col-xs-5">
-			<form action="CourseLogInfoWebpage.php" method="post" enctype="multipart/form-data">
-				<input type="submit" class="btn btn-lg btn-default" value="Enter New Course">
-			</form>
+		<div class="col-xs-1"></div>
+		<div class="col-xs-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<label>Add/Create</label>
+				</div>
+				<div class="panel-body">
+					<table class="table">
+						<tr>
+							<td>
+								<form action="#new-course" method="post" enctype="multipart/form-data">
+									<input type="submit" class="submit" value="Enter New Course">
+								</form>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<form action="php/new-student.php" method="post" enctype="multipart/form-data">
+									<input type="submit" class="submit" value="Enter New Student">
+								</form>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<form action="php/table-editor.php" method="post" enctype="multipart/form-data">
+									<input type="submit" class="submit" value="Edit Database Tables">
+								</form>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<form action="php/database-editor.php" method="post" enctype="multipart/form-data">
+									<input type="submit" class="submit" value="Create Database">
+								</form>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
 		</div>
 		<div class="col-xs-2"></div>
+		<div class="col-xs-4">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<label>Search</label>
+				</div>
+				<div class="panel-body">
+					<table class="table">
+						<tr>
+							<td>
+								<form action="php/student-search.php" method="post" enctype="multipart/form-data">
+									<input type="submit" class="submit" value="Look Up Student">
+								</form>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<label>Upload</label>
+				</div>
+				<div class="panel-body">
+					<table class="table">
+						<tr>
+							<td>
+								<form action="UploadSpreadsheetStudents.php" method="post" enctype="multipart/form-data">
+									<input type="submit" class="submit" value="Excel Spreadsheet of Students">
+								</form>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-1"></div>
 	</div>
 </div>
-	<tr>
-		<!-- <td style="width:280px" align="center">
-			<form action="CourseLogInfoWebpage.php" method="post" enctype="multipart/form-data">
-				<input type="submit" value="Enter New Course">
-			</form>
-			<br><br>
-		</td> -->
-		<td style="width:280px" align="center">
-			<form action="StudentLogInfoWebpage.php" method="post" enctype="multipart/form-data">
-				<input type="submit" value="Enter New Student">
-			</form>
-			<br><br>
-		</td>
-		<td style="width:280px" align="center">
-			<form action="TableEditor.php" method="post" enctype="multipart/form-data">
-				<input type="submit" value="Edit Database Tables">
-			</form>
-			<br><br>
-		</td>
-	</tr>
-	<tr>
-		<td align="center">
-			<br><br>
-		</td>
-		<td align="center">
-			<form action="StudentLogInfoLookup.php" method="post" enctype="multipart/form-data">
-				<input type="submit" value="Look Up Student">
-			</form>
-			<br><br>
-		</td>
-		<td align="center">
-			<form action="DatabaseEditor.php" method="post" enctype="multipart/form-data">
-				<input type="submit" value="Create Database">
-			</form>
-			<br><br>
-		</td>
-	</tr>
-	<tr>
-		<td align="center">
-			<br><br>
-		</td>
-		<td align="center">
-			<form action="UploadSpreadsheetStudents.php" method="post" enctype="multipart/form-data">
-				<input type="submit" value="Upload Excel Spreadsheet of Students">
-			</form>
-			<br><br>
-		</td>
-	</tr>
-</table> 
