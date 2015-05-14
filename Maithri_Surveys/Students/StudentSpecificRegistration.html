@@ -2,12 +2,19 @@
 <html>
 <body>
 <form>
+<center><img src="AMSA_logo.jpg" alt="AMSA Logo" style="wnameth:340px;height:147px"></center>
 <center> <h1> Welcome! </h1></center>
 <center> <h2> Student Questionnaire </h2></center>
 <br><br>
 What do you hope to achieve from this year? <br>
 <textarea name="myTextBox" cols="50" rows="5"> </textarea>
-<br><br>
+<br>
+
+<p>How do you plan on measuring your progress? <input type="text" name="measurable_goal"></p>
+<p>How do you plan on achieving your goal? <input type="text" name="achievable_goal"></p>
+<form><p>Is your goal realistic?   <input type="radio" name="realistic_goal" value="yes">Yes <input type="radio" name="realistic" value="no">No </form> </p> 
+<p>How long do you think it will take you to achieve this goal? <input type="text" name="timebound_goal"></p>
+
 What are your interests?<br> 
 <select NAME="interests" MULTIPLE SIZE=5>
   <option value="technology">Technology</option>
@@ -28,11 +35,11 @@ What are your strengths? <br>
 <input type = "checkbox" name = "strength" value = "memorization"> Memorization <br>
 <input type = "checkbox" name = "strength" value = "motivation"> Motivation <br>
 <input type = "checkbox" name = "strength" value = "dedication"> Dedication <br>
-<input type = "checkbox" name = "strength" value = "STEM"> STEM <br>
+<input type = "checkbox" name = "strength" value = "STEM"> STEM (science, technology, engineering, mathematics) <br>
 <input type = "checkbox" name = "strength" value = "humanities"> Humanities <br>
 </div>
 <!-- insert more phrases here -->
-<br><br>
+<br>
 What are your weaknesses?<br><div>
 <input type = "checkbox" name = "weaknesses" value = "communication"> Communication <br>
 <input type = "checkbox" name = "weaknesses" value = "time"> Time Management <br>
@@ -41,13 +48,29 @@ What are your weaknesses?<br><div>
 <input type = "checkbox" name = "weaknesses" value = "memorization"> Memorization <br>
 <input type = "checkbox" name = "weaknesses" value = "motivation"> Motivation <br>
 <input type = "checkbox" name = "weaknesses" value = "dedication"> Dedication <br>
-<input type = "checkbox" name = "weaknesses" value = "STEM"> STEM <br>
+<input type = "checkbox" name = "weaknesses" value = "STEM"> STEM (science, technology, engineering, mathematics) <br>
 <input type = "checkbox" name = "weaknesses" value = "humanities"> Humanities <br>
 </div>
+<br>
 
 What are your career goals for the future? <br>
-<textarea name="myTextBox" cols="50" rows="5"> </textarea>
-<br><br>
+<input type = "checkbox" name = "career" value = "architecture"> Architecture <br>
+<input type = "checkbox" name = "career" value = "medical"> Medical <br>
+<input type = "checkbox" name = "career" value = "STEM"> STEM <br>
+<input type = "checkbox" name = "career" value = "social"> Social Sciences <br>
+<input type = "checkbox" name = "career" value = "education"> Education <br>
+<input type = "checkbox" name = "career" value = "legal"> Legal Issues <br>
+<input type = "checkbox" name = "career" value = "business"> Business <br>
+<input type = "checkbox" name = "career" value = "military"> Military <br>
+<input type = "checkbox" name = "career" value = "politics"> Politics <br>
+<input type = "checkbox" name = "career" value = "foreign studies"> Foreign Studies <br>
+<input type = "checkbox" name = "career" value = "journalism"> Journalism <br>
+<input type = "checkbox" name = "career" value = "entertainment"> Entertainment Industry/Arts <br>
+<input type = "checkbox" name = "career" value = "sports"> Professional Sports <br>
+<input type = "checkbox" name = "career" value = "religion"> Religion <br>
+
+<!-- At this point, we'd have more specific branches of each career show up, but I don't know how to code that so...-->
+<br>
 What kinds of extracurriculars do you participate in? <br>
 <input type = "checkbox" name = "extracurricular" value = "academic"> Academic <br>
 <input type = "checkbox" name = "extracurricular" value = "art"> Arts <br>
@@ -66,12 +89,21 @@ What kinds of extracurriculars do you participate in? <br>
 <input type = "checkbox" name = "extracurricular" value = "student_government"> Student Government <br>
 <input type = "checkbox" name = "extracurricular" value = "theater"> Theater/Drama <br>
 <br>
-What kind of environment do you learn best in? <br>
-<input type = "checkbox" name = "environment" value = "auditory"> Academic <br>
-<input type = "checkbox" name = "environment" value = "visual"> Academic <br>
-<input type = "checkbox" name = "environment" value = "kinesthetic"> Academic <br>
-<input type = "checkbox" name = "environment" value = "verbal"> Academic <br>
-<input type = "checkbox" name = "environment" value = "logical"> Academic <br>
+What is your preferred learning style? <br>
+<input type = "checkbox" name = "style" value = "auditory"> Auditory (hearing) <br>
+<input type = "checkbox" name = "style" value = "visual"> Visual (sight) <br>
+<input type = "checkbox" name = "style" value = "kinesthetic"> Kinesthetic (touch) <br>
+<input type = "checkbox" name = "style" value = "verbal"> Verbal <br>
+<input type = "checkbox" name = "style" value = "logical"> Logical <br>
+<br>
+
+What kind of environment do you learn best in?<br>
+<input type = "checkbox" name = "environment" value = "group"> Group Work <br>
+<input type = "checkbox" name = "environment" value = "alone"> Working Alone <br>
+<input type = "checkbox" name = "environment" value = "flipped"> Flipped Classroom Learning <br>
+<br>
+
+
 
 
 
