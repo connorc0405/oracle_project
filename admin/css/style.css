@@ -24,3 +24,14 @@ td{
 #home-buttons{
 	margin-top: 10vh;
 }
+.form-label{
+	color: #000000;
+	font-weight: normal;
+}
+h3{
+	color: #000000;
+}
+#course-submit{
+	width: 50%;
+	margin-bottom: 2vh;
+}
