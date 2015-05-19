@@ -2,3 +2,36 @@
 	text-align: center;
 	margin-top: 50px;
 }
+
+input.submit {
+	margin: 0;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+}
+
+td:hover{
+	background-color: #F2F2F2
+	
+}
+td{
+	cursor: pointer;
+}
+.panel-body{
+	width: 100%;
+	padding: 0px;
+}
+#home-buttons{
+	margin-top: 10vh;
+}
+.form-label{
+	color: #000000;
+	font-weight: normal;
+}
+h3{
+	color: #000000;
+}
+#course-submit{
+	width: 50%;
+	margin-bottom: 2vh;
+}
