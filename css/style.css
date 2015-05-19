@@ -119,3 +119,6 @@ body{
 .dropdown-menu{
 	width: 100%;
 }
+#gn-menu{
+	z-index: 9000!important;
+}
