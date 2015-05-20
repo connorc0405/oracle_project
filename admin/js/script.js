@@ -22,9 +22,23 @@ adminApp.config(function($routeProvider){
 		controller: 'course-profile-ctrl'
 	})
 
+	.when('/table-editor',
+	{
+		templateUrl: 'php/table-editor.php',
+		controller: 'table-editor-ctrl'
+	})
+
+	.when('/course-tbl-create',
+	{
+		templateUrl: 'php/course-tbl-create.php',
+		controller: 'course-tbl-create-ctrl'
+	})
+
 	.otherwise({redirectTo: '/'});
 });
 
 adminApp.controller('admin-home-ctrl', function($scope){});
 adminApp.controller('new-course-ctrl', function($scope){});
 adminApp.controller('course-profile-ctrl', function($scope){});
+adminApp.controller('course-tbl-create-ctrl', function($scope){});
+adminApp.controller('table-editor-ctrl', function($scope){});

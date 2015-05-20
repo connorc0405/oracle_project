@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-<meta charset="UTF-8">
-	<head>
-		<title>Course Profile</title>
-	</head>
 
-	<body>
 
 			<?php
 				$link = mysqli_connect("localhost","root","","StudentDatabase");
@@ -15,8 +8,6 @@
 				$result = mysqli_query($link, $sql);
 				$row = mysqli_fetch_assoc($result);
 				$id=(int)$row["course_id"]+1;     
-
-
 
 				$adds['class_name'] = $link->real_escape_string($_POST['class_name']);
 				$adds['teacher'] = $link->real_escape_string($_POST['teacher']);
@@ -28,6 +19,8 @@
 				VALUES ($id, '". $adds['class_name']. "', '". $adds['teacher']. "', 
 					'". $adds['room_num']. "', '". $adds['period']. "')") 
 				or die(mysqli_error($link));
+
+
 			?>
 
 		<center>
@@ -75,8 +68,3 @@
 			<form action="Homepage.html" method="post" enctype="multipart/form-data">
 			<input id="submit" type="submit" value="Home">
 			</form>
-
-		<center>
-
-	</body>
-</html>

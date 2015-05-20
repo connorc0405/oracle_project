@@ -17,7 +17,7 @@
 
 		<br><br><br>
 
-		<form action="CoursesTableCreated.php" method="post" enctype="multipart/form-data">
+		<form action="#course-tbl-create" method="post" enctype="multipart/form-data">
 				<input type="submit" value="Create 'courses' Table">
 		</form>
 
