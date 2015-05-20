@@ -10,11 +10,11 @@ input.submit {
 	background-color: transparent;
 }
 
-td:hover{
+#selectable-row:hover{
 	background-color: #F2F2F2
 	
 }
-td{
+#selectable-row{
 	cursor: pointer;
 }
 .panel-body{
@@ -29,9 +29,16 @@ td{
 	font-weight: normal;
 }
 h3{
+	
 	color: #000000;
 }
 #course-submit{
 	width: 50%;
 	margin-bottom: 2vh;
+}
+#new-course-tbl{
+	margin-top: 2vh;
+}
+#new-course-courses{
+	margin-top: 5vh;
 }
