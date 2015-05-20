@@ -1,9 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style type="text/css">
+	#agriculture, #medical, #social, #legal, #politics, #foriegnStudies, #journalism, #entertainmentIndustry, #sports {
+		visibility: hidden;
+	}
+</style>
 <title>Student</title>
 </head>
 <body>
+ <a href="http://jquery.com/">jQuery</a>
+    <script src="jquery.js"></script>
+    <script>
+		$('#checkbox1').change(function() {
+        	$("#checkbox2").css("visibility","visible");;
+   		});	 
+    </script>
 <form>
 <center><img src="AMSA_logo.jpg" alt="AMSA Logo" style="wnameth:340px;height:147px"></center>
 <center> <h1> Welcome! </h1></center>
@@ -57,14 +69,14 @@ What are your weaknesses?<br><div>
 <br>
 
 What are your career goals for the future? <br>
-<input type = "checkbox" name = "career" value = "agriculture"> Agriculture <br>
+<input type = "checkbox" name = "career" value = "agriculture" id= "agricultureBOX"> Agriculture <br> <!-- it's box to designate that it's the checkbox not the div -->
 	<div id = "agriculture">
 		<input type = "checkbox" name = "agriculture" value = "farming"> Farming <br>
 		<input type = "checkbox" name = "agriculture" value = "fishing"> Fishing <br>
 		<input type = "checkbox" name = "agriculture" value = "forestry"> Forestry <br>
 	</div>
 <input type = "checkbox" name = "career" value = "architecture"> Architecture <br>
-<input type = "checkbox" name = "career" value = "medical"> Medical <br>
+<input type = "checkbox" name = "career" value = "medical" id = "medicalBOX"> Medical <br>
 	<div id = "medical">
 		<input type = "checkbox" name = "medical" value = "medSchool"> Medical School<br>
 		<input type = "checkbox" name = "medical" value = "nursing"> Nursing<br>
@@ -74,13 +86,13 @@ What are your career goals for the future? <br>
 		<input type = "checkbox" name = "medical" value = "PT"> Physical Therapy<br>
 	</div>
 <input type = "checkbox" name = "career" value = "STEM"> STEM (Science, Technology, Engineering, Mathematics) <br>
-<input type = "checkbox" name = "career" value = "social"> Social Sciences <br>
+<input type = "checkbox" name = "career" value = "social" id = "socialBOX"> Social Sciences <br>
 	<div id ="social">
 		<input type = "checkbox" name = "social" value = "psychology"> Psychology <br>
 		<input type = "checkbox" name = "social" value = "sociology"> Sociology <br>
 	</div>
 <input type = "checkbox" name = "career" value = "education"> Education <br>
-<input type = "checkbox" name = "career" value = "legal"> Legal Issues <br>
+<input type = "checkbox" name = "career" value = "legal" id = "legalBOX"> Legal Issues <br>
 	<div id = "legal">
 		<input type = "checkbox" name = "legal" value = "lawyer"> Lawyer <br>
 		<input type = "checkbox" name = "legal" value = "Judge"> Judge <br>
@@ -89,29 +101,29 @@ What are your career goals for the future? <br>
 	</div>
 <input type = "checkbox" name = "career" value = "business"> Business <br>
 <input type = "checkbox" name = "career" value = "military"> Military <br>
-<input type = "checkbox" name = "career" value = "politics"> Politics <br>
+<input type = "checkbox" name = "career" value = "politics" id = "politicsBOX"> Politics <br>
 	<div id ="politics">
 		<input type = "checkbox" name = "politics" value = "electedOffice"> Elected Office <br>
 		<input type = "checkbox" name = "politics" value = "bureaucracy"> Bureaucracy <br>
 		<input type = "checkbox" name = "politics" value = "congressionalAides"> Congressional Aides <br>
 	</div>
-<input type = "checkbox" name = "career" value = "foreignStudies"> Foreign Studies <br>
+<input type = "checkbox" name = "career" value = "foreignStudies" id = "foreignStudiesBOX"> Foreign Studies <br>
 	<div id = "foreignStudies">
 		<input type = "checkbox" name = "foreignStudies" value = "internationRelations"> International Relations <br>
-<input type = "checkbox" name = "career" value = "business"> Business <br>
 		<input type = "checkbox" name = "foreignStudies" value = "internationalStudies"> Interational Studies <br>
 		<input type = "checkbox" name = "foreignStudies" value = "internationalBusiness"> International Business <br>
 		<input type = "checkbox" name = "foreignStudies" value = "areaStudies"> Area Studies <br>
 		<input type = "checkbox" name = "foreignStudies" value = "languages"> Languages <br>
 	</div>
-<input type = "checkbox" name = "career" value = "journalism"> Journalism <br>
+<input type = "checkbox" name = "career" value = "business"> Business <br>
+<input type = "checkbox" name = "career" value = "journalism" id = "journalismBOX"> Journalism <br>
 	<div id = "journalism">
 		<input type = "checkbox" name = "journalism" value = "reporting"> Reporting <br>
 		<input type = "checkbox" name = "journalism" value = "anchor"> TV Anchor <br>
 		<input type = "checkbox" name = "journalism" value = "writer"> Newspaper/Magazine Writer <br>
 		<input type = "checkbox" name = "journalism" value = "editor"> Newspaper/Magazine Editor <br>
 	</div>
-<input type = "checkbox" name = "career" value = "entertainment"> Entertainment Industry/Arts <br>
+<input type = "checkbox" name = "career" value = "entertainment" id = "entertainmentBOX"> Entertainment Industry/Arts <br>
 	<div id = "entertainmentIndustry">
 		<input type = "checkbox" name = "enhtertainmentIndustry" value = "singer"> Singer/Musician <br>
 		<input type = "checkbox" name = "enhtertainmentIndustry" value = "filmIndustry"> Film Industry <br>
@@ -119,14 +131,14 @@ What are your career goals for the future? <br>
 		<input type = "checkbox" name = "enhtertainmentIndustry" value = "musicProducer"> Music Producer <br>
 		<input type = "checkbox" name = "enhtertainmentIndustry" value = "fashion"> Fashion Industry  <br>
 	</div>
-<input type = "checkbox" name = "career" value = "sports"> Professional Sports <br>
+<input type = "checkbox" name = "career" value = "sports" id = "sportsBOX"> Professional Sports <br>
 	<div id = "sports">
 		<input type = "checkbox" name = "sports" value = "sportsManagement"> Sports Management <br>
 		<input type = "checkbox" name = "sports" value = "athelete"> Professional Athelete <br>
 	</div>
 <input type = "checkbox" name = "career" value = "religion"> Religion <br>
 
-<!-- At this point, we'd have more specific branches of each career show up, but I don't know how to code that so...-->
+
 <br>
 What kinds of extracurriculars do you participate in? <br>
 <input type = "checkbox" name = "extracurricular" value = "academic"> Academic <br>
