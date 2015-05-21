@@ -8,7 +8,7 @@
 		<div class="col-xs-3"></div>
 		<div class="col-xs-6 panel panel-default">
 			<div class="panel-body">
-			<h3>New Course</h3>
+			<h3>New Course</h3> 
 				<form action="php/course-profile.php" method="post" enctype="multipart/form-data">
 					<div class="form-group">
 						<label for="class_name" class="form-label">Course Name</label>
@@ -30,7 +30,7 @@
 						<input type="text" class="form-control" name="period" id="period" placeholder="Enter Class Period">
 					</div>
 					<center>
-						<input type="submit" class="btn btn-default" id="course-submit"value="Submit">
+						<input type="submit" class="btn btn-default" id="course-submit" value="Submit">
 					</center>
 				</form>
 			</div>

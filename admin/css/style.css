@@ -42,3 +42,12 @@ h3{
 #new-course-courses{
 	margin-top: 5vh;
 }
+#gn-menu{
+	z-index: 9000;
+}
+p#panel{
+	color: #000000;
+}
+span#panel-gray{
+	color: #999999;
+}
