@@ -1,109 +1,117 @@
-<!DOCTYPE html>
-<html>
-<meta charset="UTF-8">
-	<head>
-		<title>New Student Login</title>
-	</head>
+<div class="container">
+<div class="row">
+	<div class="col-xs-12" id="home-header">
+		<h1>Course Registration</h1>
+	</div>
+</div>
+<div class="row">
+		<div class="col-xs-2"></div>
+		<div class="col-xs-8 panel panel-default">
+			<div class="panel-body">
+			<h3>New Student</h3> 
+				<form action="php/student-profile.php" method="post" enctype="multipart/form-data">
+					<div class="form-group">
+						<label for="fname" class="form-label">First Name</label>
+						<input type="text" class="form-control" name="fname" id="fname" placeholder="Enter First Name">
+					</div>
 
-	<body>
-		<center>
-			<img src="AMSA_logo.jpg" style="width:500px;height:225px">
-			<br>
-			<h2 id="heading">Student Registration</h2>
-			<br>
+					<div class="form-group">
+						<label for="lname" class="form-label">Last Name</label>
+						<input type="text" class="form-control" name="lname" id="lname" placeholder="Enter Last Name">
+					</div>
 
-			<form action="StudentProfile.php" method="post" enctype="multipart/form-data">
-  			<table id="StudentInfo">
-  				<tr>
-  					<td>First name: <input type="text" name="fname"><br><br></td>
-  				</tr>
-  				<tr>
- 					<td>Last name: <input type="text" name="lname"><br><br></td>
-  				</tr>
-  				<tr>
- 					<td>Gender: <input type="text" id="gender" name="gender"><br><br></td>
-  				</tr>
- 				<tr>
- 					<td>Homeroom:  <input type="text" id="homeroom" name="homeroom"><br><br></td>
-  				</tr>
- 				<tr>
- 					<td>Graduating year:  <input type="text" id="gradyear" name="gradyear"><br><br></td>
-  				</tr>
- 				<tr>
- 					<td>Date of birth: <input type="date" id="dob" name="dob"><br><br></td>
-  				</tr>
-			
-			</table>
+					<div class="form-group">
+					<!-- **MAKE THIS A RADIO BUTTON ** -->
+						<label for="gender" class="form-label">Gender</label>
+						<input type="text" class="form-control" name="gender" id="gender" placeholder="Enter Gender">
+					</div>
 
-			<br>
+					<div class="form-group">
+						<label for="homeroom" class="form-label">Homeroom</label>
+						<input type="text" class="form-control" name="homeroom" id="homeroom" placeholder="Enter Homeroom">
+					</div>
 
-			<b>Current Courses Avalible:</b>
-			
-			<style type="text/css">
-				tr.top td { border-top: thin solid black; }
-				tr.bottom td { border-bottom: thin solid black; }
-				tr.row td:first-child { border-left: thin solid black; }
-				tr.row td:last-child { border-right: thin solid black; }
-			</style>
+					<div class="form-group">
+						<label for="gradyear" class="form-label">Year of Graduation</label>
+						<input type="text" class="form-control" name="gradyear" id="gradyear" placeholder="Enter Year of Graduation">
+					</div>
 
-			<table>
-				<tr class="top bottom row">
-					<td style="width:140px">Course Id</td>
-					<td style="width:140px">Class Name</td>
-					<td style="width:140px">Teacher</td>
-					<td style="width:140px">Room Number</td>
-					<td style="width:140px">Period</td>
-				</tr>
+					<div class="form-group">
+						<label for="dob" class="form-label">Date of Birth</label>
+						<input type="date" class="form-control" id="dob" name="dob" placeholder="Enter Date of Birth">
+					</div>
 
-			<?php
-			//build table of existing courses availible
-				$link = mysqli_connect("localhost","root","","StudentDatabase");
-				$sql = "Select * from courses where course_id=(
-					Select max(course_id) From courses)";
-				$result = mysqli_query($link, $sql);
-				$row = mysqli_fetch_assoc($result);
-				$count=(int)$row["course_id"];
-				while($count>0){
-					$sql = "Select course_id, class_name, teacher, room_num, period from courses where
-					course_id=$count";
+					<div class="form-group">
+						<label for="image" class="form-label">Select Image</label>
+						<input type="hidden" class="form-control" name="MAX_FILE_SIZE" value="2097152" > 
+						<input type="file" class="form-control" accept="image/jpeg" name="image" id="image">
+						<p class="help-block">Upload a photo of the student to personalize the student's profile.</p>
+					</div>
+
+					<div class="form-group">
+						<label for="classes" class="form-label">Select Courses</label>
+						<input type="text" class="form-control" name="classes" id="classes" placeholder="Select Courses">
+						<p class="help-block">Input list of class id's separated by a comma and NO spaces (ex: 1,2,3)</p>
+					</div>
+
+					
+					<center>
+						<input type="submit" class="btn btn-default" id="course-submit" value="Submit">
+					</center>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="row" id="new-course-courses"> 
+		<div class="col-xs-2"></div>
+		<div class="col-xs-8 panel panel-default">
+			<div class="panel-body" >
+				<h3>Available Courses</h3>
+				<table class="table" id="new-course-tbl">
+					<tr>
+						<th>ID</th>
+						<th>Course Name</th>
+						<th>Teacher Name</th>
+						<th>Room #</th>
+						<th>Period</th>
+						<!-- <td style="width:140px">Teacher</td>
+						<td style="width:140px">Room Number</td>
+						<td style="width:140px">Period</td> -->
+					</tr>
+				<?php
+					$link = mysqli_connect("localhost","root","","StudentDatabase");
+					$sql = "Select * from courses where course_id=(
+						Select max(course_id) From courses)";
 					$result = mysqli_query($link, $sql);
 					$row = mysqli_fetch_assoc($result);
-					$course_id=$row["course_id"];
-					$class_name=$row["class_name"];
-					$teacher=$row["teacher"];
-					$room_num=$row["room_num"];
-					$period=$row["period"];
-					echo "<tr><td>$course_id</td><td>$class_name</td><td>$teacher</td><td>$room_num</td>
-					<td>$period</td></tr>";
-					$count=$count-1;
-				}
+					$count=(int)$row["course_id"];
+					while($count>0){
+						$sql = "Select course_id, class_name, teacher, room_num, period from courses where
+						course_id=$count";
+						$result = mysqli_query($link, $sql);
+						$row = mysqli_fetch_assoc($result);
+						$course_id=$row["course_id"];
+						$class_name=$row["class_name"];
+						$teacher=$row["teacher"];
+						$room_num=$row["room_num"];
+						$period=$row["period"];
+						echo "<tr>
+								<td>$course_id</td>
+								<td>$class_name</td>
+								<td>$teacher</td>
+								<td>$room_num</td>
+								<td>$period</td>
+							</tr>";
+						$count=$count-1;
+					}
 
-			?>
-			</table>
-
-
-			<br>
-			<h4>Choose Classes:</h4>
-			
-			<p>Input list of class id's separated by a comma and NO spaces (ex: 1,2,3)</p>
-			<input type="text" name="classes"> 
-
-			<br><br><br><br>
-
-			Select image to upload:
-				<input type="hidden" name="MAX_FILE_SIZE" value="2097152" > 
-    		<input type="file" accept="image/jpeg" name="image" id="image">
-
-			<br><br><br><br>
-			<input id="submit" type="submit" value="Submit" name="submit">
-			</form>
-
-			<br><br>
-
+				?>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
 			<form action="Homepage.html" method="post" enctype="multipart/form-data">
 				<input id="submit" type="submit" value="Home">
 			</form>
-
-		</center>
-	</body>
-</html>

@@ -22,7 +22,7 @@
 				$name = $file['name'];
 				$path = "/DevonThyne/StudentImages/".basename($name);
 
-				$target_dir = "C://xampp/htdocs/DevonThyne/StudentImages/";
+				$target_dir = "C://xampp/htdocs/Ryan_Dean/oracle_project/admin/php/StudentImages/";
 				$target_file = $target_dir . basename($_FILES["image"]["name"]);
 				$uploadOk = 1;
 				$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);

@@ -51,3 +51,6 @@ p#panel{
 span#panel-gray{
 	color: #999999;
 }
+.help-block{
+	font-size: 1.5em;
+}
