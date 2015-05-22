@@ -1,45 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <style type="text/css">
 	#agriculture, #medical, #social, #legal, #politics, #foriegnStudies, #journalism, #entertainmentIndustry, #sports {
 		visibility: hidden;
-	
-};</style>
+	}
+</style>
+
 <title>Student</title>
 </head>
 <body>
- <a href="http://jquery.com/">jQuery</a>
-    <script src="jquery.js"></script>
-    <script>
-		$('#agricultureBOX').change(function() {
-        	$("#agriculture").css("visibility","visible");;
-   		});
-   		$('#medicalBOX').change(function() {
-        	$("#medical").css("visibility","visible");;
-   		});
-   		$('#socialBOX').change(function() {
-        	$("#social").css("visibility","visible");;
-   		});
-   		$('#legalBOX').change(function() {
-        	$("#legal").css("visibility","visible");;
-   		});
-   		$('#politicsBOX').change(function() {
-        	$("#politics").css("visibility","visible");;
-   		});
-   		$('#foreignStudiesBOX').change(function() {
-        	$("#foreignStudies").css("visibility","visible");;
-   		});
-   		$('#journalismBOX').change(function() {
-        	$("#journalism").css("visibility","visible");;
-   		});
-   		$('#entertainmentBOX').change(function() {
-        	$("#entertainmentIndustry").css("visibility","visible");;
-   		});	 
-   		$('#sportsBOX').change(function() {
-        	$("#sports").css("visibility","visible");; en
-   		});
-    </script>
+ <!-- <a href="http://jquery.com/">jQuery</a> -->
+     <script src="jquery-1.11.3.min.js"></script>
 <form>
 <center><img src="AMSA_logo.jpg" alt="AMSA Logo" style="wnameth:340px;height:147px"></center>
 <center> <h1> Welcome! </h1></center>
@@ -195,6 +168,39 @@ What kind of environment do you learn best in?<br>
 <input type = "checkbox" name = "environment" value = "alone"> Working Alone <br>
 <input type = "checkbox" name = "environment" value = "flipped"> Flipped Classroom Learning <br>
 <br>
+
+
+<script>
+    $(document).ready(function() {
+		$('#agricultureBOX').change(function() {
+        	$('#agriculture').css("visibility","visible");
+   		});
+   		$('#medicalBOX').change(function() {
+        	$('#medical').css("visibility","visible");
+   		});
+   		$('#socialBOX').change(function() {
+        	$('#social').css("visibility","visible");
+   		});
+   		$('#legalBOX').change(function() {
+        	$('#legal').css("visibility","visible");
+   		});
+   		$('#politicsBOX').change(function() {
+        	$('#politics').css("visibility","visible");
+   		});
+   		$('#foreignStudiesBOX').change(function() {
+        	$('#foreignStudies').css("visibility","visible");
+   		});
+   		$('#journalismBOX').change(function() {
+        	$('#journalism').css("visibility","visible");
+   		});
+   		$('#entertainmentBOX').change(function() {
+        	$('#entertainmentIndustry').css("visibility","visible");
+   		});	 
+   		$('#sportsBOX').change(function() {
+        	$('#sports').css("visibility","visible");
+   		});
+   	});
+    </script>
 
 
 
