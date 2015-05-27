@@ -20,7 +20,7 @@
 				//image file path
 				$file = $_FILES["image"];
 				$name = $file['name'];
-				$path = "/DevonThyne/StudentImages/".basename($name);
+				$path = "/Ryan_Dean/oracle_project/admin/php/StudentImages/".basename($name);
 
 				$target_dir = "C://xampp/htdocs/Ryan_Dean/oracle_project/admin/php/StudentImages/";
 				$target_file = $target_dir . basename($_FILES["image"]["name"]);

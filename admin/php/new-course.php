@@ -54,11 +54,11 @@
 						<td style="width:140px">Period</td> -->
 					</tr>
 				<?php
+					include_once('Database.php');
+					Database::connect();
 					$link = mysqli_connect("localhost","root","","StudentDatabase");
-					$sql = "Select * from courses where course_id=(
-						Select max(course_id) From courses)";
-					$result = mysqli_query($link, $sql);
-					$row = mysqli_fetch_assoc($result);
+
+					$row = Database::getCourses();
 					$count=(int)$row["course_id"];
 					while($count>0){
 						$sql = "Select course_id, class_name, teacher, room_num, period from courses where

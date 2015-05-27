@@ -40,6 +40,12 @@ adminApp.config(function($routeProvider){
 		controller: 'new-student-ctrl'
 	})
 
+	.when('/student-tbl-created',
+	{
+		templateUrl: 'php/student-tbl-created.php',
+		controller: 'student-tbl-created-ctrl'
+	})
+
 	.otherwise({redirectTo: '/'});
 });
 
@@ -49,3 +55,4 @@ adminApp.controller('course-profile-ctrl', function($scope){});
 adminApp.controller('course-tbl-create-ctrl', function($scope){});
 adminApp.controller('table-editor-ctrl', function($scope){});
 adminApp.controller('new-student-ctrl', function($scope){});
+adminApp.controller('student-tbl-created-ctrl', function($scope){});
