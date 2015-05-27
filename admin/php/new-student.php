@@ -5,8 +5,8 @@
 	</div>
 </div>
 <div class="row">
-		<div class="col-xs-2"></div>
-		<div class="col-xs-8 panel panel-default">
+		<div class="col-xs-3"></div>
+		<div class="col-xs-6 panel panel-default">
 			<div class="panel-body">
 			<h3>New Student</h3> 
 				<form action="php/student-profile.php" method="post" enctype="multipart/form-data">
@@ -64,8 +64,8 @@
 		</div>
 	</div>
 	<div class="row" id="new-course-courses"> 
-		<div class="col-xs-2"></div>
-		<div class="col-xs-8 panel panel-default">
+		<div class="col-xs-3"></div>
+		<div class="col-xs-6 panel panel-default">
 			<div class="panel-body" >
 				<h3>Available Courses</h3>
 				<table class="table" id="new-course-tbl">

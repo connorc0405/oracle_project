@@ -13,21 +13,29 @@
 html{
 	-webkit-user-select: none;
 }
+#gn-menu{
+	z-index: 9000;
+}
 #welcome-header{
 	text-align: center;
-	margin-top: 25vh;
+	margin-top: 20vh;
 
+}
+#student-img{
+	border-radius: 5px;
+	margin-top: -10vh;
+	height: 20vh;
 }
 
 #welcome-detail{
-	margin-top: 10vh;
+	margin-top: 5vh;
 }
 
 #welcome-third{
 	border-right-style: solid;
 	border-right-width: 1px;
 	border-right-color: #FFFFFF;
-	height: 20vh;
+	height: 23vh;
 }
 
 h1{
@@ -64,7 +72,8 @@ body{
 }
 
 #students{
-	background: #F2F2F2;
+	z-index: 10000;
+	background-image: url('../imgs/student.jpg');
 	height: 40vh;
 	width: 100%;
 }
@@ -73,10 +82,19 @@ body{
 	height: 40vh;
 	width: 100%;
 }
+#parents-background{
+	background-image: url('../imgs/parent.jpg');
+	-webkit-filter: blur(15px);
+	height:40vh;
+
+}
 #parents{
-	background: #FFFEFE;
+	margin-top: -40vh;
+	/*background: #FFFEFE;*/
 	height: 40vh;
 	width: 100%;
+	color: #F2F2F2;
+	overflow: hidden;
 }
 #intro{
 	height: 100vh;
