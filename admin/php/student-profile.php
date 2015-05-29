@@ -1,4 +1,105 @@
+<?php
+	$link = mysqli_connect("localhost","root","","StudentDatabase");
+
+	$sql = "Select * from students where student_id=(
+			Select max(student_id) From students)";
+	$result = mysqli_query($link, $sql);
+	$row = mysqli_fetch_assoc($result);
+	//create student id
+	$id=(int)$row["student_id"]+1;
+
+	//image file path
+	$file = $_FILES["image"];
+	$name = $file['name'];
+	$path = "/Ryan_Dean/oracle_project/admin/php/StudentImages/".basename($name);
+
+	$target_dir = "C://xampp/htdocs/Ryan_Dean/oracle_project/admin/php/StudentImages/";
+	$target_file = $target_dir . basename($_FILES["image"]["name"]);
+	$uploadOk = 1;
+	$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+	// Check if image file is a actual image or fake image
+	if(isset($_POST["submit"])) {
+		$check = getimagesize($_FILES["image"]["tmp_name"]);
+			if($check !== false) {
+				$uploadOk = 1;
+			} else {
+				echo "File is not an image.";
+				$uploadOk = 0;
+			    }
+			}
+			 // Check file size
+			if ($_FILES["image"]["size"] > 500000) {
+			    echo "Sorry, your file is too large.";
+			    $uploadOk = 0;
+			 }
+			// Allow certain file formats
+			if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+			&& $imageFileType != "gif" ) {
+			    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+			    $uploadOk = 0;
+			}
+			// Check if $uploadOk is set to 0 by an error
+			if ($uploadOk == 0) {
+			    echo "Sorry, your file was not uploaded.";
+			// if everything is ok, try to upload file
+			} else {
+			    if (move_uploaded_file($_FILES["image"]["tmp_name"], $target_file)) {
+			    } else {
+			        echo "Sorry, there was an error uploading your file.";
+			    }
+			}
+			$adds['fname'] = $link->real_escape_string($_POST['fname']);
+			$adds['lname'] = $link->real_escape_string($_POST['lname']);
+			$adds['gender'] = $link->real_escape_string($_POST['gender']);
+			$adds['homeroom'] = $link->real_escape_string($_POST['homeroom']);
+			$adds['gradyear'] = $link->real_escape_string($_POST['gradyear']);
+			$adds['dob'] = $link->real_escape_string($_POST['dob']);
+			$adds['classes'] = $link->real_escape_string($_POST['classes']);
+			$adds['img_path'] = $link->real_escape_string($path);
+
+			//insert all data as new row in students table
+			mysqli_query($link,"INSERT INTO students (`student_id`, `fname`, 
+				`lname`, `gender`, `homeroom`, `gradyear`, `dob`, `classes`, `active_status`,
+				`img_path`)
+			VALUES ($id, '". $adds['fname']. "', '". $adds['lname']. "', '". $adds['gender']. "', 
+				'". $adds['homeroom']. "', '". $adds['gradyear']. "', '". $adds['dob']. "',
+				'". $adds['classes']. "', 'TRUE', '". $adds['img_path']. "')") 
+			or die(mysqli_error($link));
+?>
+
 <!DOCTYPE html>
+<html>
+<head>
+	<title><?php echo $_POST["lname"]; ?>,<?php echo $_POST["fname"]; ?></title>
+	
+	<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="stylesheet" type="text/css" href="../../css/style.css">
+	<link rel="shortcut icon" href="../../../favicon.ico">
+</head>
+<body>
+	<?php
+		$link = mysqli_connect("localhost","root","","StudentDatabase");
+		$sql = "Select * from students where student_id=$id";
+		$result = mysqli_query($link, $sql);
+		$row = mysqli_fetch_assoc($result);
+		//get image path
+		$img_path = (string)$row['img_path'];
+	?>
+
+	<div class="container" style="background-color: #FFFFFF;">
+		<div class="row">
+			<div class="col-xs-1"></div>
+			<div class="col-xs-4">
+				<img src="<?php echo $img_path; ?>" alt="Nope" style="height: 20vh;">
+			</div>
+			<div class="col-xs-6">
+				<h4><?php echo $_POST["fname"]; ?> <?php echo $_POST["lname"]; ?> </h4>
+			</div>
+			<div class="col-xs-1"></div>
+		</div>
+	</div>
+</body>
 <html>
 <meta charset="UTF-8">
 	<head>
@@ -7,7 +108,7 @@
 
 	<body>
 
-			<?php
+			<!-- <?php 
 				$link = mysqli_connect("localhost","root","","StudentDatabase");
 
 				$sql = "Select * from students where student_id=(
@@ -76,15 +177,14 @@
 					'". $adds['homeroom']. "', '". $adds['gradyear']. "', '". $adds['dob']. "',
 					 '". $adds['classes']. "', 'TRUE', '". $adds['img_path']. "')") 
 				or die(mysqli_error($link));
-			?>
+			?>-->
 
 		<center>
-			<img src="AMSA_logo.jpg" style="width:500px;height:225px">
 
 			<table>
 				<tr>
 					<td>
-						<?php
+						<!--<?php
 						$link = mysqli_connect("localhost","root","","StudentDatabase");
 						$sql = "Select * from students where student_id=$id";
 						$result = mysqli_query($link, $sql);
@@ -92,7 +192,7 @@
 						//get image path
 						$img_path = (string)$row['img_path'];
 						?>
-						<img src="<?php echo $img_path; ?>" alt="Nope" style="width:250px;height:300px">
+						<img src="<?php echo $img_path; ?>" alt="Nope" style="width:250px;height:300px">-->
 					</td>
 				</tr>
 			</table>
