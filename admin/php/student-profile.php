@@ -76,8 +76,49 @@
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<link rel="stylesheet" type="text/css" href="../../css/style.css">
 	<link rel="shortcut icon" href="../../../favicon.ico">
+	<link rel="stylesheet" type="text/css" href="../../nexus-nav/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="../../nexus-nav/css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="../../nexus-nav/css/component.css" />
+	<link rel="shortcut icon" href="../nexus-nav/favicon.ico">
+	<script src="../../js/jquery-2.1.1.min.js"></script>
+	<script src="../../dist/js/bootstrap.min.js"></script>
+	<script src="../../js/angular/angular.min.js"></script> 
+	<script src="../../js/angular-route/angular-route.min.js"></script>
+	<script type="text/javascript" src="../js/script.js"></script>
+	<script src="../../nexus-nav/js/modernizr.custom.js"></script>
 </head>
 <body>
+	<div class="nav-container">
+		<ul id="gn-menu" class="gn-menu-main">
+			<li class="gn-trigger">
+				<a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+				<nav class="gn-menu-wrapper">
+					<div class="gn-scroller">
+						<ul class="gn-menu">
+							<li class="gn-search-item">
+								<input placeholder="Search" type="search" class="gn-search">
+								<a class="gn-icon gn-icon-search"><span>Search</span></a>
+							</li>
+							<li><a href="#student-profile">Your Profile</a></li>
+							<li><a class="gn-icon gn-icon-cog">Settings</a></li>
+						</ul>
+					</div>
+				</nav>
+				<!-- Add case where there is a menu for those logged in and a menu for those who are not.  Make a class .active for the active tab on the menu -->
+				<!-- <li><a href="#">Student Profiles</a></li> -->
+				<li class="dropdown">
+					<a id="dropdownShow" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Select One<span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu">
+						<li id="studentTab"><a href="#construction">Student Profiles</a></li>
+						<li id="parentTab"><a href="#construction">Parent Profiles</a></li>
+						<li id="adminTab"><a href="admin/index.html">Admin Profiles</a></li>
+					</ul>
+				</li>
+				<li id="right"><a href="#construction">Sign Up</a></li>
+				<li id="right"><a href="#construction">Log In</a></li>
+			</li>
+		</ul>
+	</div>
 	<?php
 		$link = mysqli_connect("localhost","root","","StudentDatabase");
 		$sql = "Select * from students where student_id=$id";
@@ -87,19 +128,59 @@
 		$img_path = (string)$row['img_path'];
 	?>
 
-	<div class="container" style="background-color: #FFFFFF;">
+	<div class="container" id="student-profile-container-top">
 		<div class="row">
-			<div class="col-xs-1"></div>
-			<div class="col-xs-4">
-				<img src="<?php echo $img_path; ?>" alt="Nope" style="height: 20vh;">
+			
+			<div class="col-xs-2">
+				<img src="<?php echo $img_path; ?>" alt="Nope" id="student-profile-pic">
 			</div>
+			<div class="col-xs-1"></div>
 			<div class="col-xs-6">
 				<h4><?php echo $_POST["fname"]; ?> <?php echo $_POST["lname"]; ?> </h4>
 			</div>
-			<div class="col-xs-1"></div>
+			<!-- <div class="col-xs-1"></div> -->
+		</div>
+		<div class="row">
+			<div class="col-xs-6 col-xs-offset-3" id="student-profile-school">
+				<p id="panel"><span id="panel-gray">AMSA Charter School</span></p>
+			</div>
+		</div>
+		<ul class="nav nav-tabs">
+			<li role="presentation" class="active"><a href="#about">About</a></li>
+			<li role="presentation" class="active"><a href="#surveys">Surveys</a></li>
+		</ul>
+		<hr/>
+
+		<div id="about">
+			<div class="row">
+				<div class="col-xs-6 col-xs-offset-2">
+					<h5>About</h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6 col-xs-offset-2">
+					<p id="panel">Name: <span id="panel-gray"><?php echo $_POST["fname"]; ?> <?php echo $_POST["lname"]; ?></span></p>
+					<p id="panel">Homeroom: <span id="panel-gray"><?php echo $_POST["homeroom"]; ?></span></p>
+				</div>
+			</div>
+		</div>
+
+		<div id="survyes" class="hidden">
+			<h4>Surveys</h4>
 		</div>
 	</div>
+	<script src="../../nexus-nav/js/classie.js"></script>
+	<script src="../../nexus-nav/js/gnmenu.js"></script>
+	<script>
+		new gnMenu( document.getElementById( 'gn-menu' ) );
+	</script>
 </body>
+</html>
+
+
+
+
+
 <html>
 <meta charset="UTF-8">
 	<head>

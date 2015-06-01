@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/css?family=Ek+Mukta:200);
+
 #home-header{
 	text-align: center;
 	margin-top: 50px;
@@ -53,4 +55,45 @@ span#panel-gray{
 }
 .help-block{
 	font-size: 1.5em;
+}
+
+#student-profile-container-top{
+	margin-top: 20vh;
+	padding-bottom: 5vh;
+	background-color: #FFFFFF;
+	border-top-right-radius: 6px;
+	
+}
+#student-profile-pic{
+	height: 20vh;
+	border-radius: 6px;
+	margin-top: -5vh;
+	margin-left: -60%;
+}
+h4{
+	/*margin-left: -20%;*/
+	font-size: 4em;
+	font-family: 'Ek Mukta', sans-serif;
+}
+#student-profile-school{
+	margin-top: -7vh;
+}
+.nav-tabs{
+	position: relative;
+	right: 5%;
+	float: right;
+}
+#about{
+	background-color: #FFFFFF;
+}
+
+hr{
+	border-bottom-style: solid;
+	border-bottom-width: 0.5vh;
+	border-bottom-color: #C3C3C3;
+	width: 100%;
+}
+h5{
+	font-size: 3em;
+	font-family: 'Ek Mukta', sans-serif;
 }
