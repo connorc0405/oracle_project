@@ -107,7 +107,7 @@
 				<!-- Add case where there is a menu for those logged in and a menu for those who are not.  Make a class .active for the active tab on the menu -->
 				<!-- <li><a href="#">Student Profiles</a></li> -->
 				<li class="dropdown">
-					<a id="dropdownShow" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Select One<span class="caret"></span></a>
+					<a id="dropdownShow" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin<span class="caret"></span></a>
 					<ul class="dropdown-menu" role="menu">
 						<li id="studentTab"><a href="#construction">Student Profiles</a></li>
 						<li id="parentTab"><a href="#construction">Parent Profiles</a></li>
@@ -145,10 +145,15 @@
 				<p id="panel"><span id="panel-gray">AMSA Charter School</span></p>
 			</div>
 		</div>
-		<ul class="nav nav-tabs">
-			<li role="presentation" class="active"><a href="#about">About</a></li>
-			<li role="presentation" class="active"><a href="#surveys">Surveys</a></li>
-		</ul>
+
+		<!-- MAKE A SCROLLSPY FOR THE TABS -->
+		<!-- <div id="scrollspyDiv" data-spy="scroll" data-target="scrollspyExample"> -->
+			<ul class="nav nav-tabs">
+				<li role="presentation" class="active"><a href="#about">About</a></li>
+				<li role="presentation" class="active"><a href="#interests">Interests</a></li>
+				<li role="presentation" class="active"><a href="#classes">Classes</a></li>
+			</ul>
+		<!-- </div> -->
 		<hr/>
 
 		<div id="about">
@@ -159,14 +164,119 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-6 col-xs-offset-2">
-					<p id="panel">Name: <span id="panel-gray"><?php echo $_POST["fname"]; ?> <?php echo $_POST["lname"]; ?></span></p>
+					<p id="panel">Name: <span id="panel-gray"><?php echo ($_POST["fname"] . " " . $_POST["lname"]); ?></span></p>
+					<p id="panel">Gender: <span id="panel-gray"><?php echo $_POST["gender"]; ?></span></p>
 					<p id="panel">Homeroom: <span id="panel-gray"><?php echo $_POST["homeroom"]; ?></span></p>
+					<p id="panel">Year of Graduation: <span id="panel-gray"><?php echo $_POST["gradyear"]; ?></span></p>
+					<p id="panel">Date of Birth: <span id="panel-gray"><?php echo $_POST["dob"]; ?></span></p>
 				</div>
 			</div>
 		</div>
 
-		<div id="survyes" class="hidden">
-			<h4>Surveys</h4>
+		<div id="interests">
+			<div class="row">
+				<div class="col-xs-6 col-xs-offset-2">
+					<h5>Interests</h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-6 col-xs-offset-2">
+
+				</div>
+			</div>
+		</div>
+
+		<div id="classes">
+			<div class="row">
+				<div class="col-xs-6 col-xs-offset-2">
+					<h5>Classes</h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-8 col-xs-offset-2">
+					<table class="table" id="classes">
+						<tr>
+							<th>ID</th>
+							<th>Name</th>
+							<th>Teacher</th>
+							<th>Room #</th>
+							<th>Period</th>
+						</tr>
+						<?php
+							//create classes table
+							$classes = $_POST["classes"];
+							$link = mysqli_connect("localhost","root","","StudentDatabase");
+							$tempStr = "";
+							//counter to travers classes string
+							$count=(int)strlen($classes);
+
+							while($count>-1){
+								if(substr($classes, $count-1)===","){
+									$tempInt = (int)$tempStr;
+									$sql = "Select * from courses where course_id=$tempInt";
+									$result = mysqli_query($link, $sql);
+									$row = mysqli_fetch_assoc($result);
+
+									$course_id = $row["course_id"];
+									$class_name = $row["class_name"];
+									$teacher = $row["teacher"];
+									$room_num = $row["room_num"];
+									$period = $row["period"];
+
+									$tempStr = "";
+
+									//make row in classes table
+									echo "<tr>
+											<td>$course_id</td>
+											<td>$class_name</td>
+											<td>$teacher</td>
+											<td>$room_num</td>
+											<td>$period</td>
+										</tr>";
+
+									//take class entry out of string
+									$classes=substr($classes, 0, $count-1);	
+									$count2=$count-1;
+									$count=$count2;
+								}
+								else if($count==0){
+									$tempInt = (int)$tempStr;
+									$sql = "Select * from courses where course_id=$tempInt";
+									$result = mysqli_query($link, $sql);
+									$row = mysqli_fetch_assoc($result);
+
+									$course_id = $row["course_id"];
+									$class_name = $row["class_name"];
+									$teacher = $row["teacher"];
+									$room_num = $row["room_num"];
+									$period = $row["period"];
+
+									$tempStr = "";
+
+									echo "<tr>
+											<td>$course_id</td>
+											<td>$class_name</td>
+											<td>$teacher</td>
+											<td>$room_num</td>
+											<td>$period</td>
+										</tr>";
+
+									$classes=substr($classes, 0, $count-1);	
+									$count2=$count-1;
+									$count=$count2;
+								}
+								else{
+									$tempStr .= substr($classes, $count-1);
+									$classes=substr($classes, 0, $count-1);
+									$count2=$count-1;
+									$count=$count2;
+								}
+							}
+
+							?>
+					</table>
+				</div>
+			</div>
 		</div>
 	</div>
 	<script src="../../nexus-nav/js/classie.js"></script>
@@ -278,7 +388,7 @@
 				</tr>
 			</table>
 
-			<table>
+			<<!-- table>
 				<tr>
 					<td>
 						<h1><?php echo $_POST["lname"]; ?>, </h1>
@@ -325,8 +435,8 @@
 					</td>
 				</tr>
 			</table>
-
-			<br><br><br>
+ -->
+<!-- 			<br><br><br>
 			<h4>Classes</h4>
 
 			<table border="1" style="border:1px solid black">
@@ -420,7 +530,7 @@
 				}
 
 				?>
-			</table>
+			</table> -->
 
 
 			<br><br><br><br>
