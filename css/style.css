@@ -73,7 +73,8 @@ body{
 
 #students{
 	z-index: 10000;
-	background-image: url('../imgs/student.jpg');
+	/*background-image: url('../imgs/student.jpg');*/
+	background-color: #F2F2F2;
 	height: 40vh;
 	width: 100%;
 }
@@ -82,15 +83,15 @@ body{
 	height: 40vh;
 	width: 100%;
 }
-#parents-background{
+/*#parents-background{
 	background-image: url('../imgs/parent.jpg');
 	-webkit-filter: blur(15px);
 	height:40vh;
 
-}
+}*/
 #parents{
-	margin-top: -40vh;
-	/*background: #FFFEFE;*/
+	/*margin-top: -40vh;*/
+	background: #FFFEFE;
 	height: 40vh;
 	width: 100%;
 	color: #F2F2F2;
