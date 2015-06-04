@@ -11,9 +11,6 @@
 			if(! $link) {
 				die("died" . mysql_error());
 			}
-			else {
-				echo("Connected to database.");
-			}
 		}
 
 		/*
