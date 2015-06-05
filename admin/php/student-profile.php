@@ -1,10 +1,12 @@
 <?php
 	$link = mysqli_connect("localhost","root","","StudentDatabase");
-
-	$sql = "Select * from students where student_id=(
-			Select max(student_id) From students)";
-	$result = mysqli_query($link, $sql);
-	$row = mysqli_fetch_assoc($result);
+	include_once('Database.php');
+	Database::connect();
+	$row = Database::getStudents();
+	// $sql = "Select * from students where student_id=(
+	// 		Select max(student_id) From students)";
+	// $result = mysqli_query($link, $sql);
+	// $row = mysqli_fetch_assoc($result);
 	//create student id
 	$id=(int)$row["student_id"]+1;
 
@@ -48,23 +50,26 @@
 			        echo "Sorry, there was an error uploading your file.";
 			    }
 			}
-			$adds['fname'] = $link->real_escape_string($_POST['fname']);
-			$adds['lname'] = $link->real_escape_string($_POST['lname']);
-			$adds['gender'] = $link->real_escape_string($_POST['gender']);
-			$adds['homeroom'] = $link->real_escape_string($_POST['homeroom']);
-			$adds['gradyear'] = $link->real_escape_string($_POST['gradyear']);
-			$adds['dob'] = $link->real_escape_string($_POST['dob']);
-			$adds['classes'] = $link->real_escape_string($_POST['classes']);
+
+			// $adds['fname'] = $link->real_escape_string($_POST['fname']);
+			$adds['fname'] = Database::getContent($_POST['fname']);
+			$adds['lname'] = Database::getContent($_POST['lname']);
+			$adds['gender'] = Database::getContent($_POST['gender']);
+			$adds['homeroom'] = Database::getContent($_POST['homeroom']);
+			$adds['gradyear'] = Database::getContent($_POST['gradyear']);
+			$adds['dob'] = Database::getContent($_POST['dob']);
+			$adds['classes'] = Database::getContent($_POST['classes']);
 			$adds['img_path'] = $link->real_escape_string($path);
 
 			//insert all data as new row in students table
-			mysqli_query($link,"INSERT INTO students (`student_id`, `fname`, 
-				`lname`, `gender`, `homeroom`, `gradyear`, `dob`, `classes`, `active_status`,
-				`img_path`)
-			VALUES ($id, '". $adds['fname']. "', '". $adds['lname']. "', '". $adds['gender']. "', 
-				'". $adds['homeroom']. "', '". $adds['gradyear']. "', '". $adds['dob']. "',
-				'". $adds['classes']. "', 'TRUE', '". $adds['img_path']. "')") 
-			or die(mysqli_error($link));
+			Database::addStudent($id, $adds['fname'], $adds['lname'], $adds['gender'], $adds['homeroom'], $adds['gradyear'], $adds['dob'], $adds['classes'], $adds['img_path']);
+			// mysqli_query($link,"INSERT INTO students (`student_id`, `fname`, 
+			// 	`lname`, `gender`, `homeroom`, `gradyear`, `dob`, `classes`, `active_status`,
+			// 	`img_path`)
+			// VALUES ($id, '". $adds['fname']. "', '". $adds['lname']. "', '". $adds['gender']. "', 
+			// 	'". $adds['homeroom']. "', '". $adds['gradyear']. "', '". $adds['dob']. "',
+			// 	'". $adds['classes']. "', 'TRUE', '". $adds['img_path']. "')") 
+			// or die(mysqli_error($link));
 ?>
 
 <!DOCTYPE html>

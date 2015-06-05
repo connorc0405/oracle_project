@@ -58,6 +58,28 @@
 			$row = mysqli_fetch_assoc($result);
 			return $row;
 		}
-		
+
+		public function getStudents(){
+			$link = mysqli_connect("localhost","root","","StudentDatabase");
+			$sql = "Select * from students where student_id=(
+					Select max(student_id) From students)";
+			$result = mysqli_query($link, $sql);
+			$row = mysqli_fetch_assoc($result);
+			return $row;
+		}
+		public function getContent($name){
+			$link = mysqli_connect("localhost","root","","StudentDatabase");
+			return $link->real_escape_string($name);
+		}
+		public function addStudent($student_id, $fname, $lname, $gender, $homeroom, $gradyear, $dob, $classes, $img_path){
+			$link = mysqli_connect("localhost","root","","StudentDatabase");
+			mysqli_query($link,"INSERT INTO students (`student_id`, `fname`, 
+				`lname`, `gender`, `homeroom`, `gradyear`, `dob`, `classes`, `active_status`,
+				`img_path`)
+			VALUES ('".$student_id."', '". $fname. "', '". $lname. "', '". $gender. "', 
+				'". $homeroom. "', '". $gradyear. "', '". $dob. "',
+				'". $classes. "', 'TRUE', '". $img_path. "')") 
+			or die(mysqli_error($link));
+		}
 	}
 ?>
