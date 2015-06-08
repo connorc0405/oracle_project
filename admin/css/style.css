@@ -48,9 +48,11 @@ h3{
 #gn-menu{
 	z-index: 9000;
 }
+
 p#panel{
 	color: #000000;
 }
+
 span#panel-gray{
 	color: #999999;
 }
@@ -65,43 +67,49 @@ span#panel-gray{
 	border-top-right-radius: 6px;
 	
 }
+
 #student-profile-pic{
 	height: 20vh;
 	border-radius: 6px;
 	margin-top: -5vh;
 	margin-left: -60%;
 }
+
 h4{
 	/*margin-left: -20%;*/
 	font-size: 4em;
 	font-family: 'Lato', sans-serif;
 }
+
 #student-profile-school{
 	margin-top: -7vh;
 }
+
 .nav-tabs{
 	position: relative;
 	right: 5%;
 	float: right;
 }
+
 #about{
 	background-color: #FFFFFF;
 }
 
 hr{
 	border-bottom-style: solid;
-	border-bottom-width: 0.5vh;
+	border-bottom-width: 0.15vh;
 	border-bottom-color: #C3C3C3;
 	width: 100%;
 }
+
 h5{
 	font-size: 3em;
 	font-family: 'Lato', sans-serif;
 }
+
 #classes{
 	margin-top: 2vh;
 }
-
 
 .caret-right {
     border-bottom: 4px solid transparent;
@@ -116,10 +124,12 @@ h5{
     /*float: right;*/
 
 }
+
 #glyph{
 	text-align: center;
 	width: 60px;
 }
+
 .panel{
 	font-family: 'Lato', sans-serif;
 	/*font-size: 1.25em;*/

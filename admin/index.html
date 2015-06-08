@@ -22,6 +22,7 @@
 		<link rel="stylesheet" type="text/css" href="../nexus-nav/css/component.css" />
 		<link rel="shortcut icon" href="../nexus-nav/favicon.ico">
 		<link rel="shortcut icon" href="../../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/nav-style.css">
 
 		<!-- JAVASCRIPT LINKS -->
 		<script src="../js/jquery-2.1.1.min.js"></script>
@@ -33,6 +34,9 @@
 	</head>
 
 	<body>
+
+
+	
 	<div class="nav-container">
 		<ul id="gn-menu" class="gn-menu-main">
 			<li class="gn-trigger">
@@ -50,9 +54,21 @@
 							<li>
 								<a href="#view"><span id="glyph"class="glyphicon glyphicon-eye-open"></span>View</a>
 							</li>
-							<li>
-								<a><span id="glyph"class="glyphicon glyphicon-plus"></span>New</a>
-							</li>
+
+
+							<div id='cssmenu'>
+								<ul >
+									<li style="line-height: 60px;" class="has-sub last">
+										<a><span id="glyph"class="glyphicon glyphicon-plus"></span>New</a>
+										<ul>
+											<li><a href='#'><span>Sub Product</span></a></li>
+											<li class='last'><a href='#'><span>Sub Product</span></a></li>
+		            					</ul>
+									</li>
+								</ul>
+							</div>
+
+
 							<li>
 								<a href="../../../phpMyAdmin" target="_blank"><span id="glyph"class=" glyphicon glyphicon-cloud"></span>Database</a>
 							</li>
