@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
+<head>
+
+<style type="text/css">
+	#agriculture, #medical, #social, #legal, #politics, #foriegnStudies, #journalism, #entertainmentIndustry, #sports {
+		visibility: hidden;
+	}
+</style>
+
+<title>Student</title>
+</head>
 <body>
+ <!-- <a href="http://jquery.com/">jQuery</a> -->
+     <script src="jquery-1.11.3.min.js"></script>
 <form>
+<center><img src="AMSA_logo.jpg" alt="AMSA Logo" style="wnameth:340px;height:147px"></center>
 <center> <h1> Welcome! </h1></center>
 <center> <h2> Student Questionnaire </h2></center>
 <br><br>
 What do you hope to achieve from this year? <br>
-<textarea name="myTextBox" cols="50" rows="5"> </textarea>
-<br><br>
-What are your interests?<br> 
+<textarea name="goals" cols="50" rows="5"> </textarea>
+<br>
+
+
+<p>How do you plan on achieving your goal? <input type="text" name="achievable_goal"></p>
+<form><p>Is your goal realistic?   <input type="radio" name="realistic_goal" value="yes">Yes <input type="radio" name="realistic" value="no">No </form> </p> 
+<p>How long do you think it will take you to achieve this goal? <input type="text" name="timebound_goal"></p>
+
+What are your interests? (ctrl + click to select more than one)<br> 
 <select NAME="interests" MULTIPLE SIZE=5>
   <option value="technology">Technology</option>
   <option value="arts">Arts</option>
@@ -28,11 +47,11 @@ What are your strengths? <br>
 <input type = "checkbox" name = "strength" value = "memorization"> Memorization <br>
 <input type = "checkbox" name = "strength" value = "motivation"> Motivation <br>
 <input type = "checkbox" name = "strength" value = "dedication"> Dedication <br>
-<input type = "checkbox" name = "strength" value = "STEM"> STEM <br>
+<input type = "checkbox" name = "strength" value = "STEM"> STEM (science, technology, engineering, mathematics) <br>
 <input type = "checkbox" name = "strength" value = "humanities"> Humanities <br>
 </div>
 <!-- insert more phrases here -->
-<br><br>
+<br>
 What are your weaknesses?<br><div>
 <input type = "checkbox" name = "weaknesses" value = "communication"> Communication <br>
 <input type = "checkbox" name = "weaknesses" value = "time"> Time Management <br>
@@ -41,13 +60,83 @@ What are your weaknesses?<br><div>
 <input type = "checkbox" name = "weaknesses" value = "memorization"> Memorization <br>
 <input type = "checkbox" name = "weaknesses" value = "motivation"> Motivation <br>
 <input type = "checkbox" name = "weaknesses" value = "dedication"> Dedication <br>
-<input type = "checkbox" name = "weaknesses" value = "STEM"> STEM <br>
+<input type = "checkbox" name = "weaknesses" value = "STEM"> STEM (science, technology, engineering, mathematics) <br>
 <input type = "checkbox" name = "weaknesses" value = "humanities"> Humanities <br>
 </div>
+<br>
 
 What are your career goals for the future? <br>
-<textarea name="myTextBox" cols="50" rows="5"> </textarea>
-<br><br>
+<input type = "checkbox" name = "career" value = "agriculture" id= "agricultureBOX"> Agriculture <br> <!-- it's box to designate that it's the checkbox not the div -->
+	<div id = "agriculture">
+		<input type = "checkbox" name = "agriculture" value = "farming"> Farming <br>
+		<input type = "checkbox" name = "agriculture" value = "fishing"> Fishing <br>
+		<input type = "checkbox" name = "agriculture" value = "forestry"> Forestry <br>
+	</div>
+<input type = "checkbox" name = "career" value = "architecture"> Architecture <br>
+<input type = "checkbox" name = "career" value = "medical" id = "medicalBOX"> Medical <br>
+	<div id = "medical">
+		<input type = "checkbox" name = "medical" value = "medSchool"> Medical School<br>
+		<input type = "checkbox" name = "medical" value = "nursing"> Nursing<br>
+		<input type = "checkbox" name = "medical" value = "PA"> Physician's Assistant<br>
+		<input type = "checkbox" name = "medical" value = "Dentistry"> Dentistry<br>
+		<input type = "checkbox" name = "medical" value = "Psychiatry"> Psychiatry<br>
+		<input type = "checkbox" name = "medical" value = "PT"> Physical Therapy<br>
+	</div>
+<input type = "checkbox" name = "career" value = "STEM"> STEM (Science, Technology, Engineering, Mathematics) <br>
+<input type = "checkbox" name = "career" value = "social" id = "socialBOX"> Social Sciences <br>
+	<div id ="social">
+		<input type = "checkbox" name = "social" value = "psychology"> Psychology <br>
+		<input type = "checkbox" name = "social" value = "sociology"> Sociology <br>
+	</div>
+<input type = "checkbox" name = "career" value = "education"> Education <br>
+<input type = "checkbox" name = "career" value = "legal" id = "legalBOX"> Legal Issues <br>
+	<div id = "legal">
+		<input type = "checkbox" name = "legal" value = "lawyer"> Lawyer <br>
+		<input type = "checkbox" name = "legal" value = "Judge"> Judge <br>
+		<input type = "checkbox" name = "legal" value = "criminalJustice"> Criminal Justice<br>
+		<input type = "checkbox" name = "legal" value = "lawEnforcement"> Law Enforcement <br>
+	</div>
+<input type = "checkbox" name = "career" value = "business"> Business <br>
+<input type = "checkbox" name = "career" value = "military"> Military <br>
+<input type = "checkbox" name = "career" value = "politics" id = "politicsBOX"> Politics <br>
+	<div id ="politics">
+		<input type = "checkbox" name = "politics" value = "electedOffice"> Elected Office <br>
+		<input type = "checkbox" name = "politics" value = "bureaucracy"> Bureaucracy <br>
+		<input type = "checkbox" name = "politics" value = "congressionalAides"> Congressional Aides <br>
+	</div>
+<input type = "checkbox" name = "career" value = "foreignStudies" id = "foreignStudiesBOX"> Foreign Studies <br>
+	<div id = "foreignStudies">
+		<input type = "checkbox" name = "foreignStudies" value = "internationRelations"> International Relations <br>
+		<input type = "checkbox" name = "foreignStudies" value = "internationalStudies"> Interational Studies <br>
+		<input type = "checkbox" name = "foreignStudies" value = "internationalBusiness"> International Business <br>
+		<input type = "checkbox" name = "foreignStudies" value = "areaStudies"> Area Studies <br>
+		<input type = "checkbox" name = "foreignStudies" value = "languages"> Languages <br>
+	</div>
+<input type = "checkbox" name = "career" value = "business"> Business <br>
+<input type = "checkbox" name = "career" value = "journalism" id = "journalismBOX"> Journalism <br>
+	<div id = "journalism">
+		<input type = "checkbox" name = "journalism" value = "reporting"> Reporting <br>
+		<input type = "checkbox" name = "journalism" value = "anchor"> TV Anchor <br>
+		<input type = "checkbox" name = "journalism" value = "writer"> Newspaper/Magazine Writer <br>
+		<input type = "checkbox" name = "journalism" value = "editor"> Newspaper/Magazine Editor <br>
+	</div>
+<input type = "checkbox" name = "career" value = "entertainment" id = "entertainmentBOX"> Entertainment Industry/Arts <br>
+	<div id = "entertainmentIndustry">
+		<input type = "checkbox" name = "entertainmentIndustry" value = "singer"> Singer/Musician <br>
+		<input type = "checkbox" name = "entertainmentIndustry" value = "filmIndustry"> Film Industry <br>
+		<input type = "checkbox" name = "entertainmentIndustry" value = "Visual Artist"> Visual Artistry (Drawing & Painting, Sculpting, Illustration) <br>
+		<input type = "checkbox" name = "entertainmentIndustry" value = "musicProducer"> Music Producer <br>
+		<input type = "checkbox" name = "entertainmentIndustry" value = "fashion"> Fashion Industry  <br>
+	</div>
+<input type = "checkbox" name = "career" value = "sports" id = "sportsBOX"> Professional Sports <br>
+	<div id = "sports">
+		<input type = "checkbox" name = "sports" value = "sportsManagement"> Sports Management <br>
+		<input type = "checkbox" name = "sports" value = "athelete"> Professional Athelete <br>
+	</div>
+<input type = "checkbox" name = "career" value = "religion"> Religion <br>
+
+
+<br>
 What kinds of extracurriculars do you participate in? <br>
 <input type = "checkbox" name = "extracurricular" value = "academic"> Academic <br>
 <input type = "checkbox" name = "extracurricular" value = "art"> Arts <br>
@@ -66,12 +155,54 @@ What kinds of extracurriculars do you participate in? <br>
 <input type = "checkbox" name = "extracurricular" value = "student_government"> Student Government <br>
 <input type = "checkbox" name = "extracurricular" value = "theater"> Theater/Drama <br>
 <br>
-What kind of environment do you learn best in? <br>
-<input type = "checkbox" name = "environment" value = "auditory"> Academic <br>
-<input type = "checkbox" name = "environment" value = "visual"> Academic <br>
-<input type = "checkbox" name = "environment" value = "kinesthetic"> Academic <br>
-<input type = "checkbox" name = "environment" value = "verbal"> Academic <br>
-<input type = "checkbox" name = "environment" value = "logical"> Academic <br>
+What is your preferred learning style? <br>
+<input type = "checkbox" name = "style" value = "auditory"> Auditory (hearing) <br>
+<input type = "checkbox" name = "style" value = "visual"> Visual (sight) <br>
+<input type = "checkbox" name = "style" value = "kinesthetic"> Kinesthetic (touch) <br>
+<input type = "checkbox" name = "style" value = "verbal"> Verbal <br>
+<input type = "checkbox" name = "style" value = "logical"> Logical/Mathematical <br>
+<br>
+
+What kind of environment do you learn best in?<br>
+<input type = "checkbox" name = "environment" value = "group"> Group Work <br>
+<input type = "checkbox" name = "environment" value = "alone"> Working Alone <br>
+<input type = "checkbox" name = "environment" value = "flipped"> Flipped Classroom Learning <br>
+<br>
+
+
+<script>
+    $(document).ready(function() {
+		$('#agricultureBOX').change(function() {
+        	$('#agriculture').css("visibility","visible");
+   		});
+   		$('#medicalBOX').change(function() {
+        	$('#medical').css("visibility","visible");
+   		});
+   		$('#socialBOX').change(function() {
+        	$('#social').css("visibility","visible");
+   		});
+   		$('#legalBOX').change(function() {
+        	$('#legal').css("visibility","visible");
+   		});
+   		$('#politicsBOX').change(function() {
+        	$('#politics').css("visibility","visible");
+   		});
+   		$('#foreignStudiesBOX').change(function() {
+        	$('#foreignStudies').css("visibility","visible");
+   		});
+   		$('#journalismBOX').change(function() {
+        	$('#journalism').css("visibility","visible");
+   		});
+   		$('#entertainmentBOX').change(function() {
+        	$('#entertainmentIndustry').css("visibility","visible");
+   		});	 
+   		$('#sportsBOX').change(function() {
+        	$('#sports').css("visibility","visible");
+   		});
+   	});
+    </script>
+
+
 
 
 
