@@ -3,7 +3,7 @@
 $input_username = $_POST['username'];
 $input_password = $_POST['password'];
 $cstrong;
-$connection = mysqli_connect("localhost","root","","");
+$connection = mysqli_connect("localhost","root","","studentdatabase");
 if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();

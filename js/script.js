@@ -8,8 +8,8 @@ databaseApp.config(function($routeProvider) {
 	$routeProvider
 	.when('/',
 	{
-		templateUrl: 'html/welcome.html',
-		controller: 'welcome-ctrl'
+		templateUrl: 'html/login.html',
+		controller: 'login-ctrl'
 	})
 
 	.when('/construction',
@@ -26,6 +26,7 @@ databaseApp.config(function($routeProvider) {
 	.otherwise({redirectTo: '/'});
 });
 
+databaseApp.controller('login-ctrl', function($scope){});
 databaseApp.controller('welcome-ctrl', function($scope){
 	// Code to make the page scroll to a specific section.  Code idea from http://jsfiddle.net/ryXFt/3/
 	$('.student-link').click(function(){
