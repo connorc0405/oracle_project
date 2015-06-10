@@ -63,3 +63,7 @@ databaseApp.controller('construction-ctrl', function($scope){
 });
 databaseApp.controller('student-profile-ctrl', function($scope){
 });
+
+$('#example').click(function () {
+  $('[data-toggle="popover"]').popover()
+});
