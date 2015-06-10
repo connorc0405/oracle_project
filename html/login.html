@@ -1,13 +1,38 @@
 <!DOCTYPE html>
 <div class="conatiner">
 	<div class="row">
+		<div class="col-xs-4 col-xs-offset-4" id="login-box">
+			<h1>Log In</h1>
+			<form id="form2" action="php/login.php" method="post">
+				<div class="form-group">
+					<label for="login-form-username">Username</label>
+					<input type="text" name="username" class="form-control" id="login-form-username" placeholder="Enter Username" required autofocus minlength="1" pattern="[Aa-Za]">
+				</div>
+				<div class="form-group">
+					<label for="login-form-pswd">Password</label>
+					<input type="password" name="password" class="form-control" id="login-form-pswd" placeholder="Password" required minlength="1">
+				</div>
+				<div class="form-group">
+					<label for="login-form-school">School</label>
+					<select class="form-control">
+						<option>AMSA Charter School</option>
+					</select>
+				</div>
+				<center>
+					<button id="login-form-btn" class="btn btn-defualt" type="submit" value="Submit" form="form2">Log In</button>
+				</center>
+				
+			</form>
 
 
-	<!-- REFER TO README-RYAN.txt for more -->
-		<div class="col-xs-6 col-xs-offset-3" style="background-color: #FFFFFF;
-													height: 30vh;
-													margin-top: 30vh;">
-			<h2 style="color: #000000;">This is going to be a possible log in page.  I may change it to something very cool though.  I'm going to try the cool thing first and if that doesn't work out then I'm going to do this thing with a cool minimalisic design.  I'm also going to use SASS and make my design first before I start coding.</h2>
+			<!-- <form id="form2" action="login.php" method="post">
+			Username:<br>
+			<input type="text" name="username">
+			<br>
+			Password:<br>
+			<input type="password" name="password">
+			</form> -->
+	 		
 		</div>
 	</div>
 </div>

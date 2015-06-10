@@ -23,6 +23,12 @@ databaseApp.config(function($routeProvider) {
 		templateUrl: 'html/student-profile.html',
 		controller: 'student-profile-ctrl'
 	})
+
+	.when('/login',
+	{
+		templateUrl: 'html/login.html',
+		controller: 'login-ctrl'
+	})
 	.otherwise({redirectTo: '/'});
 });
 
@@ -47,6 +53,9 @@ databaseApp.controller('welcome-ctrl', function($scope){
 			$('#admin').offset().top-50},
 				'slow');
 		});
+
+	// $('.nav-link').hover{
+		// toggle class to current with cursor of pointer
 	$('#studentTab').click(function(){
 		$('#dropdownShow').html('Student Profiles');
 	});
@@ -63,6 +72,8 @@ databaseApp.controller('construction-ctrl', function($scope){
 });
 databaseApp.controller('student-profile-ctrl', function($scope){
 });
+databaseApp.controller('login-ctrl', function($scope){});
+
 
 $('#example').click(function () {
   $('[data-toggle="popover"]').popover()
