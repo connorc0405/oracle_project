@@ -16,6 +16,9 @@ $salt = $row['salt'];
 if(hash('sha512', $input_password.$salt, false) === $hash)
 {
 	echo "Great Success";
+	
+	header('Location: ../#construction');
+  	exit;
 }
 else{
 	echo "Failed login";

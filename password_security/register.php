@@ -23,6 +23,8 @@ if (!mysqli_query($connection, "INSERT INTO login_information (username, hash, s
   }
 else{
 	echo "Account created successfully";
+	header('Location: ../admin/#new-student');
+  	exit;
 }
 mysqli_close($connection);
 ?>

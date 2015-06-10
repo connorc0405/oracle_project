@@ -12,14 +12,13 @@
 html{
 	-webkit-user-select: none;
 }
-#gn-menu{
-	z-index: 9000;
-}
+
 #welcome-header{
 	text-align: center;
-	margin-top: 20vh;
+	margin-top: 15vh;
 
 }
+
 #student-img{
 	border-radius: 5px;
 	margin-top: -10vh;
@@ -33,27 +32,28 @@ html{
 #welcome-third{
 	border-right-style: solid;
 	border-right-width: 1px;
-	border-right-color: #FFFFFF;
+	border-right-color: #F5F7FA;
 	height: 23vh;
 }
 
 h1{
 	font-family: 'Ek Mukta', sans-serif;
-	font-size: 5em;
-	color: #FFFFFF;
+	font-weight: lighter;
+	/*font-size: 5em;*/
+	color: #F5F7FA;
 }
 
 h3{
-	font-family: 'Ek Mukta', sans-serif;
-	font-size: 2.5em;
-	color: #FFFFFF;
+	/*font-family: 'Ek Mukta', sans-serif;*/
+	/*font-size: 2.5em;*/
+	color: #F5F7FA;
 	text-align: center;
 }
 
 p{
 	font-family: 'Ek Mukta', sans-serif;
 	font-size: 1.5em;
-	color: #FFFFFF;
+	color: #F5F7FA;
 	padding-left: 5%;
 	padding-right: 5%;
 }
@@ -63,7 +63,7 @@ p{
 }
 
 body{
-	background: #5f6f81;
+	background: #50c1e9;
 }
 
 #right{
@@ -97,7 +97,7 @@ body{
 	overflow: hidden;
 }
 #intro{
-	height: 100vh;
+	height: 80vh;
 	
 }
 #sub-div{
@@ -137,9 +137,3 @@ body{
 .dropdown-menu{
 	width: 100%;
 }
-<<<<<<< HEAD
-=======
-#gn-menu{
-	z-index: 9000!important;
-}
->>>>>>> 016099953e6b2471a77d055615a8002f2b793825

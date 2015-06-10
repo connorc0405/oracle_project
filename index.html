@@ -14,63 +14,41 @@
 	<title>School Profiles</title>
 
 	<!-- CSS LINKS -->
-	<link href="dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="dist/css/bootstrap.min.css">
+	<link href="bootflat/bootflat/css/bootflat.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="bootflat/css/site.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" type="text/css" href="nexus-nav/css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="nexus-nav/css/demo.css" />
-	<link rel="stylesheet" type="text/css" href="nexus-nav/css/component.css" />
-	<link rel="shortcut icon" href="nexus-nav/favicon.ico">
 	<link rel="shortcut icon" href="../favicon.ico">
 
 	<!-- JAVASCRIPT LINKS -->
 	<script src="js/jquery-2.1.1.min.js"></script>
-	<script src="dist/js/bootstrap.min.js"></script>
+	<script src="bootflat/bootflat/js/icheck.min.js"></script>
+	<script src="bootflat/bootflat/js/jquery.fs.selecter.min.js"></script>
+	<script src="bootflat/bootflat/js/jquery.fs.stepper.min.js"></script>
 	<script src="js/angular/angular.min.js"></script> 
 	<script src="js/angular-route/angular-route.min.js"></script>
 	<script src="js/script.js"></script>
-	<script src="nexus-nav/js/modernizr.custom.js"></script>
 </head>
 <body>
-	<!-- Navigation Menu from: http://tympanus.net/codrops/2013/07/30/google-nexus-website-menu/ -->
-	<div class="nav-container">
-		<ul id="gn-menu" class="gn-menu-main">
-			<li class="gn-trigger">
-				<a class="gn-icon gn-icon-menu"><span>Menu</span></a>
-				<nav class="gn-menu-wrapper">
-					<div class="gn-scroller">
-						<ul class="gn-menu">
-							<li class="gn-search-item">
-								<input placeholder="Search" type="search" class="gn-search">
-								<a class="gn-icon gn-icon-search"><span>Search</span></a>
-							</li>
-							<li><a href="#student-profile">Your Profile</a></li>
-							<li><a class="gn-icon gn-icon-cog">Settings</a></li>
-						</ul>
-					</div>
-				</nav>
-				<!-- Add case where there is a menu for those logged in and a menu for those who are not.  Make a class .active for the active tab on the menu -->
-				<!-- <li><a href="#">Student Profiles</a></li> -->
-				<li class="dropdown">
-					<a id="dropdownShow" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Select One<span class="caret"></span></a>
-					<ul class="dropdown-menu" role="menu">
-						<li id="studentTab"><a href="#construction">Student Profiles</a></li>
-						<li id="parentTab"><a href="#construction">Parent Profiles</a></li>
-						<li id="adminTab"><a href="admin/index.html">Admin Profiles</a></li>
-					</ul>
-				</li>
-				<li id="right"><a href="#construction">Sign Up</a></li>
-				<li id="right"><a href="#construction">Log In</a></li>
-			</li>
-		</ul>
-	</div>
+	<nav class="navbar navbar-default navbar-fixed-top navbar-custom" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand">ASIT</a>
+			</div>
+
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a class="nav-link" href="password_security/register_login.html">Log In</a></li>
+					<li><a class="nav-link current" href="password_security/register_login.html">Sign Up</a></li>
+					<!-- <li><input type="text" class="form-control" placeholder="Search"></li> -->
+				</ul>
+			</div>
+
+			
+		</div>
+	</nav>
 
 	<!-- Provides the div in which the ng-app will display its informaiton from the links -->
 	<div ng-view></div>
-
-	<script src="nexus-nav/js/classie.js"></script>
-	<script src="nexus-nav/js/gnmenu.js"></script>
-	<script>
-		new gnMenu( document.getElementById( 'gn-menu' ) );
-	</script>
 </body>
 </html>

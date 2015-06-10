@@ -8,8 +8,8 @@ databaseApp.config(function($routeProvider) {
 	$routeProvider
 	.when('/',
 	{
-		templateUrl: 'html/login.html',
-		controller: 'login-ctrl'
+		templateUrl: 'html/welcome.html',
+		controller: 'welcome-ctrl'
 	})
 
 	.when('/construction',

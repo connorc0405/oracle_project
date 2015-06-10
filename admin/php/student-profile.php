@@ -62,6 +62,10 @@
 			$adds['img_path'] = $link->real_escape_string($path);
 
 			//insert all data as new row in students table
+			if (!Database::createStudentTable())
+  			{
+  				echo "Error description: " . mysqli_error($link);
+  			}
 			Database::addStudent($id, $adds['fname'], $adds['lname'], $adds['gender'], $adds['homeroom'], $adds['gradyear'], $adds['dob'], $adds['classes'], $adds['img_path']);
 			// mysqli_query($link,"INSERT INTO students (`student_id`, `fname`, 
 			// 	`lname`, `gender`, `homeroom`, `gradyear`, `dob`, `classes`, `active_status`,
