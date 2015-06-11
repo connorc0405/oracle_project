@@ -29,10 +29,18 @@ databaseApp.config(function($routeProvider) {
 		templateUrl: 'html/login.html',
 		controller: 'login-ctrl'
 	})
+
+	.when('/register',
+	{
+		templateUrl: 'html/register.html',
+		controller: 'register-ctrl'
+	})
+
 	.otherwise({redirectTo: '/'});
 });
 
 databaseApp.controller('login-ctrl', function($scope){});
+databaseApp.controller('register-ctrl', function($scope){});
 databaseApp.controller('welcome-ctrl', function($scope){
 	// Code to make the page scroll to a specific section.  Code idea from http://jsfiddle.net/ryXFt/3/
 	$('.student-link').click(function(){
@@ -54,8 +62,7 @@ databaseApp.controller('welcome-ctrl', function($scope){
 				'slow');
 		});
 
-	// $('.nav-link').hover{
-		// toggle class to current with cursor of pointer
+	
 	$('#studentTab').click(function(){
 		$('#dropdownShow').html('Student Profiles');
 	});
@@ -66,6 +73,8 @@ databaseApp.controller('welcome-ctrl', function($scope){
 		$('#dropdownShow').html('Admin Profiles');
 		
 	});
+
+	$('#student-img').fadeIn("slow", function(){});
 });
 
 databaseApp.controller('construction-ctrl', function($scope){

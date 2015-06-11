@@ -5,7 +5,7 @@ $password = $_POST['password'];
 $cstrong;
 $salt = openssl_random_pseudo_bytes(10, $cstrong);
 $connection = mysqli_connect("localhost","root","","studentdatabase");
-
+$id=
 if (mysqli_connect_errno())
 {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
@@ -17,7 +17,7 @@ if (!mysqli_query($connection, "CREATE TABLE IF NOT EXISTS login_information (id
   {
   echo "Error description: " . mysqli_error($connection);
   }
-if (!mysqli_query($connection, "INSERT INTO login_information (username, hash, salt) VALUES ('".$username."', sha2('".$password."".$salt."', 512), '".$salt."');"))
+if (!mysqli_query($connection, "INSERT INTO login_information (id, username, hash, salt) VALUES ('".$id."', '" .$username."', sha2('".$password."".$salt."', 512), '".$salt."');"))
   {
   echo "Error description: " . mysqli_error($connection);
   }

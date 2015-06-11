@@ -1,7 +1,7 @@
 <div class="container">
 <div class="row">
 	<div class="col-xs-12" id="home-header">
-		<h1>Course Registration</h1>
+		<h1>Student Registration</h1>
 	</div>
 </div>
 <div class="row">

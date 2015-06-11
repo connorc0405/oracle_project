@@ -61,6 +61,9 @@
 			$adds['classes'] = Database::getContent($_POST['classes']);
 			$adds['img_path'] = $link->real_escape_string($path);
 
+
+			
+			$username = mysql_query('SELECT username FROM login_information WHERE ')
 			//insert all data as new row in students table
 			if (!Database::createStudentTable())
   			{
