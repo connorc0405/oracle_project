@@ -7,14 +7,14 @@
 
 	<body>
 		<center>
-		<img src="AMSA_logo.jpg" style="width:500px;height:225px">
+		<!-- <img src="AMSA_logo.jpg" style="width:500px;height:225px"> -->
 			<br>
 		<br><br>
 			
 			<?php
 						include_once('Database.php');
 						Database::connect();
-						Database::selectDatabase('StudentDatabase');
+						Database::selectDatabase('studentdatabase');
 
 						if(Database::table_exists('students')) {
 							echo "Table already exists";

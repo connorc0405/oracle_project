@@ -25,12 +25,21 @@
 		*/
 		public function createStudentTable(){
 			$link = mysqli_connect("localhost","root","","StudentDatabase");
-			mysqli_query($link, "CREATE TABLE students (student_id INT(6) PRIMARY KEY, 
+			mysql_select_db("studentdatabase");
+			// mysqli_query($link, "CREATE TABLE students (student_id INT(6) PRIMARY KEY, 
+			// 					fname VARCHAR(30) NOT NULL, lname VARCHAR(30) NOT NULL, 
+			// 					gender VARCHAR(6) NOT NULL, homeroom VARCHAR(30) NOT NULL, 
+			// 					gradyear INT(4) NOT NULL, dob DATE NOT NULL, classes VARCHAR(30),
+			// 					active_status BIT NOT NULL, img_path VARCHAR(256),
+			// 					FOREIGN KEY(username)
+			// 						REFERENCES login_information(username))")
+			// 					or die(mysql_error());
+								mysqli_query($link, "CREATE TABLE students (student_id INT(6) PRIMARY KEY, 
 								fname VARCHAR(30) NOT NULL, lname VARCHAR(30) NOT NULL, 
 								gender VARCHAR(6) NOT NULL, homeroom VARCHAR(30) NOT NULL, 
 								gradyear INT(4) NOT NULL, dob DATE NOT NULL, classes VARCHAR(30),
-								active_status BIT NOT NULL, img_path VARCHAR(256))");
-								// or die(mysql_error($link));
+								active_status BIT NOT NULL, img_path VARCHAR(256))")
+								or die(mysql_error());
 			echo "Table Edit Successful";
 		}
 
