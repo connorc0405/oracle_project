@@ -63,7 +63,7 @@
 
 
 			
-			$username = mysql_query('SELECT username FROM login_information WHERE ')
+			$username = mysql_query('SELECT username FROM login_information ORDER BY id DESC LIMIT 1');
 			//insert all data as new row in students table
 			if (!Database::createStudentTable())
   			{

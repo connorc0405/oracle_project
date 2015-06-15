@@ -4,7 +4,9 @@
 		die("Connection failed: " . $conn->connect_error);
 	} 
 	$sql = "CREATE DATABASE StudentDatabase";
+
 	if ($conn->query($sql) === TRUE) {
+		$conn->query('USE StudentDatabase');
 		echo "Studentdatabase created successfully";
 	} else {
 		echo "Error creating database: " . $conn->error;
