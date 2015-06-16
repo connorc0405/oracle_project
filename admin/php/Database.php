@@ -2,6 +2,8 @@
 	class Database {
 		// var $link = mysqli_connect("localhost","root","","StudentDatabase");
 		function Database(){}
+
+		
 		
 		/*
 		 * Connects to the Student Database
@@ -18,8 +20,8 @@
 		 * Selects a database given a name
 		*/
 		public function selectDatabase($name){
-			
-			mysql_select_db($name);
+			mysql_query('USE StudentDatabase');
+			// mysql_select_db($name);
 		}
 
 		/*
@@ -54,9 +56,9 @@
 			 					fname VARCHAR(30) NOT NULL, lname VARCHAR(30) NOT NULL, 
 			 					gender VARCHAR(6) NOT NULL, homeroom VARCHAR(30) NOT NULL, 
 			 					gradyear INT(4) NOT NULL, dob DATE NOT NULL, classes VARCHAR(30),
-			 					active_status BIT NOT NULL, img_path VARCHAR(256), username VARCHAR(45),
-								CONSTRAINT fk_username FOREIGN KEY (username)
-			 					REFERENCES login_information(username))")
+			 					active_status BIT NOT NULL, img_path VARCHAR(256), account_id INT(4),
+								CONSTRAINT fk_account_id FOREIGN KEY (account_id)
+			 					REFERENCES login_information(id))")
 							or die(mysqli_error($link));
 
 							echo "Courses Table Created Successfully";
@@ -124,5 +126,9 @@
 				'". $classes. "', 'TRUE', '". $img_path. "')") 
 			or die(mysqli_error($link));
 		}
+
+
+
+
 	}
 ?>

@@ -1,14 +1,17 @@
 <div class="container">
 <div class="row">
 	<div class="col-xs-12" id="home-header">
+	<center>
 		<h1>Student Registration</h1>
+	</center>
+		
 	</div>
 </div>
 <div class="row">
 		<div class="col-xs-3"></div>
 		<div class="col-xs-6 panel panel-default">
 			<div class="panel-body">
-			<h3>New Student</h3> 
+			<h3 style="color: #000000;">New Student</h3> 
 				<form action="php/student-profile.php" method="post" enctype="multipart/form-data">
 					<div class="form-group">
 						<label for="fname" class="form-label">First Name</label>

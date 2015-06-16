@@ -50,8 +50,6 @@
 			        echo "Sorry, there was an error uploading your file.";
 			    }
 			}
-
-			// $adds['fname'] = $link->real_escape_string($_POST['fname']);
 			$adds['fname'] = Database::getContent($_POST['fname']);
 			$adds['lname'] = Database::getContent($_POST['lname']);
 			$adds['gender'] = Database::getContent($_POST['gender']);
@@ -61,23 +59,12 @@
 			$adds['classes'] = Database::getContent($_POST['classes']);
 			$adds['img_path'] = $link->real_escape_string($path);
 
-
-			
-			$username = mysql_query('SELECT username FROM login_information ORDER BY id DESC LIMIT 1');
-			//insert all data as new row in students table
 			if (!Database::createStudentTable())
   			{
   				echo "Error description: " . mysqli_error($link);
   			}
 			Database::addStudent($id, $adds['fname'], $adds['lname'], $adds['gender'], $adds['homeroom'], $adds['gradyear'], $adds['dob'], $adds['classes'], $adds['img_path']);
-			// mysqli_query($link,"INSERT INTO students (`student_id`, `fname`, 
-			// 	`lname`, `gender`, `homeroom`, `gradyear`, `dob`, `classes`, `active_status`,
-			// 	`img_path`)
-			// VALUES ($id, '". $adds['fname']. "', '". $adds['lname']. "', '". $adds['gender']. "', 
-			// 	'". $adds['homeroom']. "', '". $adds['gradyear']. "', '". $adds['dob']. "',
-			// 	'". $adds['classes']. "', 'TRUE', '". $adds['img_path']. "')") 
-			// or die(mysqli_error($link));
-?>
+			?>
 
 <!DOCTYPE html>
 <html>
@@ -85,52 +72,41 @@
 	<title><?php echo $_POST["lname"]; ?>,<?php echo $_POST["fname"]; ?></title>
 	
 	<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../../bootflat/bootflat/css/bootflat.css">
+	<link rel="stylesheet" type="text/css" href="../../bootflat/css/site.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/style.css">
 	<link rel="stylesheet" type="text/css" href="../../css/style.css">
-	<link rel="shortcut icon" href="../../../favicon.ico">
-	<link rel="stylesheet" type="text/css" href="../../nexus-nav/css/normalize.css">
-	<link rel="stylesheet" type="text/css" href="../../nexus-nav/css/demo.css" />
-	<link rel="stylesheet" type="text/css" href="../../nexus-nav/css/component.css" />
-	<link rel="shortcut icon" href="../nexus-nav/favicon.ico">
+	
 	<script src="../../js/jquery-2.1.1.min.js"></script>
 	<script src="../../dist/js/bootstrap.min.js"></script>
+	<script src="../../bootflat/bootflat/js/icheck.min.js"></script>
+	<script src="../../bootflat/bootflat/js/jquery.fs.selecter.min.js"></script>
+	<script src="../../bootflat/bootflat/js/jquery.fs.stepper.min.js"></script>
 	<script src="../../js/angular/angular.min.js"></script> 
 	<script src="../../js/angular-route/angular-route.min.js"></script>
 	<script type="text/javascript" src="../js/script.js"></script>
-	<script src="../../nexus-nav/js/modernizr.custom.js"></script>
+
 </head>
 <body>
-	<div class="nav-container">
-		<ul id="gn-menu" class="gn-menu-main">
-			<li class="gn-trigger">
-				<a class="gn-icon gn-icon-menu"><span>Menu</span></a>
-				<nav class="gn-menu-wrapper">
-					<div class="gn-scroller">
-						<ul class="gn-menu">
-							<li class="gn-search-item">
-								<input placeholder="Search" type="search" class="gn-search">
-								<a class="gn-icon gn-icon-search"><span>Search</span></a>
-							</li>
-							<li><a href="#student-profile">Your Profile</a></li>
-							<li><a class="gn-icon gn-icon-cog">Settings</a></li>
-						</ul>
-					</div>
-				</nav>
-				<!-- Add case where there is a menu for those logged in and a menu for those who are not.  Make a class .active for the active tab on the menu -->
-				<!-- <li><a href="#">Student Profiles</a></li> -->
-				<li class="dropdown">
-					<a id="dropdownShow" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin<span class="caret"></span></a>
-					<ul class="dropdown-menu" role="menu">
-						<li id="studentTab"><a href="#construction">Student Profiles</a></li>
-						<li id="parentTab"><a href="#construction">Parent Profiles</a></li>
-						<li id="adminTab"><a href="admin/index.html">Admin Profiles</a></li>
-					</ul>
-				</li>
-				<li id="right"><a href="#construction">Sign Up</a></li>
-				<li id="right"><a href="#construction">Log In</a></li>
-			</li>
-		</ul>
-	</div>
+
+
+<nav class="navbar navbar-default navbar-fixed-top navbar-custom" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand">ASIT</a>
+			</div>
+
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav navbar-right">
+					<!-- Links go here.  Make a JS function to change the current class.  Some sort of toggle. -->
+					<li class="hover"><a class="nav-link" href="#login">Log In</a></li>
+					<li class="hover"><a class="nav-link current" href="#register">Sign Up</a></li>
+
+					<!-- <li><input type="text" class="form-control" placeholder="Search"></li> -->
+				</ul>
+			</div>
+		</div>
+	</nav>
 	<?php
 		$link = mysqli_connect("localhost","root","","StudentDatabase");
 		$sql = "Select * from students where student_id=$id";
@@ -291,11 +267,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="../../nexus-nav/js/classie.js"></script>
-	<script src="../../nexus-nav/js/gnmenu.js"></script>
-	<script>
-		new gnMenu( document.getElementById( 'gn-menu' ) );
-	</script>
+	
 </body>
 </html>
 
