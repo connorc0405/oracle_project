@@ -3,11 +3,6 @@
 	include_once('Database.php');
 	Database::connect();
 	$row = Database::getStudents();
-	// $sql = "Select * from students where student_id=(
-	// 		Select max(student_id) From students)";
-	// $result = mysqli_query($link, $sql);
-	// $row = mysqli_fetch_assoc($result);
-	//create student id
 	$id=(int)$row["student_id"]+1;
 
 	//image file path
@@ -112,7 +107,6 @@
 		$sql = "Select * from students where student_id=$id";
 		$result = mysqli_query($link, $sql);
 		$row = mysqli_fetch_assoc($result);
-		//get image path
 		$img_path = (string)$row['img_path'];
 	?>
 

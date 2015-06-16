@@ -9,17 +9,17 @@
 	font-weight: "light";
 	src: url('../fonts/Raleway-Light.ttf');
 }
-html{
+
+html {
 	-webkit-user-select: none;
 }
 
-#welcome-header{
+#welcome-header {
 	text-align: center;
 	margin-top: 15vh;
-
 }
 
-#student-img{
+#student-img {
 	border-radius: 5px;
 	margin-top:10vh;
 	margin-left: -5%;
@@ -27,32 +27,31 @@ html{
 
 }
 
-#welcome-detail{
+#welcome-detail {
 	margin-top: 5vh;
 }
 
-#welcome-third{
+#welcome-third {
 	border-right-style: solid;
 	border-right-width: 1px;
 	border-right-color: #F5F7FA;
 	height: 23vh;
 }
 
-h1{
+h1 {
 	font-family: 'Ek Mukta', sans-serif;
 	font-weight: lighter;
 	/*font-size: 5em;*/
 	color: #F5F7FA;
 }
 
-h3{
+h3 {
 	font-family: 'Ek Mukta', sans-serif;
-	/*font-size: 2.5em;*/
 	color: #F5F7FA;
 	text-align: center;
 }
 
-p{
+p {
 	font-family: 'Ek Mukta', sans-serif;
 	font-size: 1.5em;
 	color: #F5F7FA;
@@ -60,105 +59,101 @@ p{
 	padding-right: 5%;
 }
 
-.nav-container{
+.nav-container {
 	background-color: #FFFFFF;
 }
 
-body{
+body {
 	background: #50c1e9;
 }
 
-#right{
+#right {
 	float: right;
 }
 
-#students{
+#students {
 	z-index: 10000;
-	/*background-image: url('../imgs/student.jpg');*/
-
 	background-color: #E6E9ED;
 	height: 70vh;
 	width: 100%;
 	display: inline-block;
-	/*height: 100%;*/
 	vertical-align: middle;
 }
-#admin{
+
+#admin {
 	background: #F2F2F2;
 	height: 40vh;
 	width: 100%;
 }
-/*#parents-background{
-	background-image: url('../imgs/parent.jpg');
-	-webkit-filter: blur(15px);
-	height:40vh;
 
-}*/
-#parents{
-	/*margin-top: -40vh;*/
+#parents {
 	background: #FFFEFE;
 	height: 40vh;
 	width: 100%;
 	color: #F2F2F2;
 	overflow: hidden;
 }
-#intro{
+
+#intro {
 	height: 80vh;
-	
 }
-#sub-div{
+
+#sub-div {
 	text-align: center;
 	color: #000000;
 }
-#user{
+
+#welcome-detail-glyph {
 	color: #FFFFFF;
 	font-size: 3em;
 }
-/*fix this so it is one class styling for efficency.*/
-.student-link{
+
+.point {
 	cursor: pointer;
 }
-.parent-link{
-	cursor: pointer;
-}
-.admin-link{
-	cursor: pointer;
-}
-.third-text{
+
+.third-text {
 	padding-top: 2vh;
 }
+
 #construction-img {
 	height: 40vh;
 	-webkit-filter: invert(100%);
 }
+
 #construction-row {
 	margin-top: 25vh;
 }
-#construction-text{
+
+#construction-text {
 	text-align: left
 }
-#construction-back-btn{
+
+#construction-back-btn {
 	margin-top: -20vh;
 }
-.dropdown-menu{
+
+.dropdown-menu {
 	width: 100%;
 }
 
-#login-box{
+#login-box {
 	margin-top: 30vh;
 	background-color: #FFFFFF;
 	border-radius: 5px;
 }
 
-#login-box > h1{
+#login-box > h1 {
 	color: #AAB2BD;
 	text-align: center;
 }
-#login-form-btn{
+
+#login-form-btn {
 	width: 75%;
 	height: 5vh;
 	margin-bottom: 2vh;
 }
-#student-desc{
+
+#student-desc {
 	color: #000000;
 }

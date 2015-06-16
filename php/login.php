@@ -1,5 +1,4 @@
 <?php
-	include_once('../admin/php/Database.php');
 	/* Gets the form input from html/login.html */
 	$input_username = $_POST['username'];
 	$input_password = $_POST['password'];
@@ -12,6 +11,7 @@
 	  echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
 
+	/* Security to retrieve and decode the hash and salt. */
 	$hash_salt_object = mysqli_query($connection, "SELECT hash, salt FROM login_information WHERE username = '".$input_username."';") or die("Error description: ".mysqli_error($connection));
 	$row = mysqli_fetch_assoc($hash_salt_object);
 	$hash = $row['hash'];

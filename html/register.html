@@ -1,27 +1,35 @@
-<!DOCTYPE html>
+<!-- DOCTYPE HTML -->
 <div class="conatiner">
 	<div class="row">
 		<div class="col-xs-4 col-xs-offset-4" id="login-box">
 			<h1>Register</h1>
 			<form id="form2" action="php/register.php" method="post">
+
+				<!-- USERNAME -->
 				<div class="form-group">
 					<label for="login-form-username">Username</span></label>
+					<!-- username glyphicon and input box -->
 					<div class="input-group">
 						 <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
 						<input type="text" name="username" class="form-control" id="login-form-username" placeholder="Enter Username" required autofocus minlength="1" pattern="[Aa-Za]">
 					</div>
-					
 				</div>
+
+				<!-- PASSWORD -->
 				<div class="form-group">
 					<label for="login-form-pswd">Password</label>
 					<input type="password" name="password" class="form-control" id="login-form-pswd" placeholder="Password" required minlength="1">
 				</div>
+
+				<!-- SCHOOL DROPDOWN -->
 				<div class="form-group">
 					<label for="login-form-school">School</label>
 					<select class="form-control">
 						<option>AMSA Charter School</option>
 					</select>
 				</div>
+
+				<!-- SUBMIT -->
 				<center>
 					<button id="login-form-btn" class="btn btn-defualt" type="submit" value="Submit" form="form2">Sign Me Up!</button>
 				</center>
