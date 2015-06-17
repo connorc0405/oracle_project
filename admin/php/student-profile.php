@@ -60,7 +60,13 @@
   			}
 			Database::addStudent($id, $adds['fname'], $adds['lname'], $adds['gender'], $adds['homeroom'], $adds['gradyear'], $adds['dob'], $adds['classes'], $adds['img_path']);
 			?>
-
+<?php
+		$link = mysqli_connect("localhost","root","","StudentDatabase");
+		$sql = "Select * from students where student_id=$id";
+		$result = mysqli_query($link, $sql);
+		$row = mysqli_fetch_assoc($result);
+		$img_path = (string)$row['img_path'];
+	?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,21 +100,17 @@
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav navbar-right">
 					<!-- Links go here.  Make a JS function to change the current class.  Some sort of toggle. -->
-					<li class="hover"><a class="nav-link" href="#login">Log In</a></li>
-					<li class="hover"><a class="nav-link current" href="#register">Sign Up</a></li>
+					<li class="hover"><a class="nav-link current" href="student-profile.php">Profile</a></li>
+					<!-- <li class="hover"><p class="navbar-text"> 
+					<img src="<?php echo $img_path; ?>" id="navbar-profile-img" class="img-circle">
+					<?php echo $_POST["fname"]; ?> <?php echo $_POST["lname"]; ?></p></li>-->
 
-					<!-- <li><input type="text" class="form-control" placeholder="Search"></li> -->
+					
 				</ul>
 			</div>
 		</div>
 	</nav>
-	<?php
-		$link = mysqli_connect("localhost","root","","StudentDatabase");
-		$sql = "Select * from students where student_id=$id";
-		$result = mysqli_query($link, $sql);
-		$row = mysqli_fetch_assoc($result);
-		$img_path = (string)$row['img_path'];
-	?>
+	
 
 	<div class="container" id="student-profile-container-top">
 		<div class="row">
@@ -192,7 +194,13 @@
 							//counter to travers classes string
 							$count=(int)strlen($classes);
 
+							if($count == 0){
+								echo"<tr>
+									<td>".($_POST["fname"] . " " . $_POST["lname"]) . " has no classes.
+								</tr>";
+							}
 							while($count>-1){
+
 								if(substr($classes, $count-1)===","){
 									$tempInt = (int)$tempStr;
 									$sql = "Select * from courses where course_id=$tempInt";

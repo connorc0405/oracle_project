@@ -8,7 +8,7 @@ databaseApp.config(function($routeProvider) {
 	$routeProvider
 	.when('/',
 	{
-		templateUrl: 'html/welcome.html',
+		templateUrl: 'php/welcome.php',
 		controller: 'welcome-ctrl'
 	})
 

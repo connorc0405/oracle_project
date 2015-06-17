@@ -1,7 +1,28 @@
 <?php
 	class Database {
-		$link = mysqli_connect("localhost","root","","StudentDatabase");
+		// $link = mysqli_connect("localhost","root","","StudentDatabase");
 		function Database(){}
+
+		// $dbname1 = "";
+		/*
+		 * Creates the database given a name
+		*/
+		public function createDatabase($dbname){
+			// $dbname1 = $dbname
+			$conn = new mysqli("localhost","root","");
+			if ($conn->connect_error) {
+				die("Connection failed: " . $conn->connect_error);
+			} 
+			$sql = "CREATE DATABASE " . $dbname . ";";
+
+			if ($conn->query($sql) === TRUE) {
+				$conn->query('USE ' . $dbname . 'StudentDatabase');
+				echo "Studentdatabase created successfully";
+			} else {
+				echo "Error creating database: " . $conn->error;
+			}
+			$conn->close();
+		}
 
 		/*
 		 * Connects to the Student Database
@@ -35,19 +56,40 @@
 				echo "Table already exists";
 			}
 			else {
+				// mysqli_query($link,"CREATE TABLE students (student_id INT(6) PRIMARY KEY, 
+			 // 		fname VARCHAR(30) NOT NULL, lname VARCHAR(30) NOT NULL, 
+			 // 		gender VARCHAR(6) NOT NULL, homeroom VARCHAR(30) NOT NULL, 
+			 // 		gradyear INT(4) NOT NULL, dob DATE NOT NULL, classes VARCHAR(30),
+			 // 		active_status BIT NOT NULL, img_path VARCHAR(256), account_id INT(4),
+				// 	CONSTRAINT fk_account_id FOREIGN KEY (account_id)
+			 // 		REFERENCES login_information(id))")
+				// or die(mysqli_error($link));
+
 				mysqli_query($link,"CREATE TABLE students (student_id INT(6) PRIMARY KEY, 
 			 		fname VARCHAR(30) NOT NULL, lname VARCHAR(30) NOT NULL, 
 			 		gender VARCHAR(6) NOT NULL, homeroom VARCHAR(30) NOT NULL, 
 			 		gradyear INT(4) NOT NULL, dob DATE NOT NULL, classes VARCHAR(30),
-			 		active_status BIT NOT NULL, img_path VARCHAR(256), account_id INT(4),
-					CONSTRAINT fk_account_id FOREIGN KEY (account_id)
-			 		REFERENCES login_information(id))")
+			 		active_status BIT NOT NULL, img_path VARCHAR(256), account_id INT(4))")
 				or die(mysqli_error($link));
 				echo "Courses Table Created Successfully";
 			}		
 			echo "Table Edit Successful";
 		}
+public function createCourseTable(){
+			$link = mysqli_connect("localhost","root","","StudentDatabase");
 
+						if(Database::table_exists('courses', 'StudentDatabase')) {
+							echo "Table already exists";
+						}
+						else{
+							mysqli_query($link,"CREATE TABLE courses (course_id INT(6) PRIMARY KEY, 
+								class_name VARCHAR(30) NOT NULL, teacher VARCHAR(30) NOT NULL, 
+								room_num INT(6) NOT NULL, period INT(6) NOT NULL)")
+							or die(mysqli_error($link));
+
+							echo "Courses Table Created Successfully";
+						}
+		}
 		/*
 		 * Checks to see if a table is in the StudentDatabase database
 		*/
@@ -112,5 +154,7 @@
 				'". $classes. "', 'TRUE', '". $img_path. "')") 
 			or die(mysqli_error($link));
 		}
+
+		
 	}
 ?>
