@@ -36,6 +36,12 @@ databaseApp.config(function($routeProvider) {
 		controller: 'register-ctrl'
 	})
 
+	.when('/404',
+	{
+		templateUrl: 'html/404.html',
+		controller: '404-ctrl'
+	})
+
 	.otherwise({redirectTo: '/'});
 });
 
@@ -61,7 +67,6 @@ databaseApp.controller('welcome-ctrl', function($scope){
 			$('#admin').offset().top-50},
 				'slow');
 		});
-
 	
 	$('#studentTab').click(function(){
 		$('#dropdownShow').html('Student Profiles');
@@ -71,9 +76,7 @@ databaseApp.controller('welcome-ctrl', function($scope){
 	});
 	$('#adminTab').click(function(){
 		$('#dropdownShow').html('Admin Profiles');
-		
 	});
-
 	$('#student-img').fadeIn("slow", function(){});
 });
 
@@ -82,7 +85,8 @@ databaseApp.controller('construction-ctrl', function($scope){
 databaseApp.controller('student-profile-ctrl', function($scope){
 });
 databaseApp.controller('login-ctrl', function($scope){});
-
+databaseApp.controller('404-ctrl', function($scope){
+});
 
 $('#example').click(function () {
   $('[data-toggle="popover"]').popover()
