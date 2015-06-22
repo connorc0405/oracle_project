@@ -112,7 +112,7 @@
 	</nav>
 	
 
-	<div class="container" id="student-profile-container-top">
+	<div class="container profile-container" id="student-profile-container-top">
 		<div class="row">
 			
 			<div class="col-xs-2">
@@ -262,28 +262,11 @@
 									$count=$count2;
 								}
 							}
-
-							?>
+						?>
 					</table>
 				</div>
 			</div>
 		</div>
 	</div>
-	
 </body>
 </html>
-
-
-
-			<br><br><br><br>
-
-			<form action="StudentLogInfoWebpage.php" method="post" enctype="multipart/form-data">
-				<input type="submit" value="Enter New Student">
-			</form>
-
-			<br><br>
-			<form action="Homepage.html" method="post" enctype="multipart/form-data">
-			<input id="submit" type="submit" value="Home">
-			</form>
-
-		</center>
