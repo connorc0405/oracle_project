@@ -3,7 +3,7 @@
 $input_username = $_POST['username'];
 $input_password = $_POST['password'];
 $cstrong;
-$connection = mysqli_connect("192.168.1.177","root","ccumming","cybersql");
+$connection = mysqli_connect("10.0.4.197","root","ccumming","sqlinjection");
 if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();

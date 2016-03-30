@@ -4,7 +4,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 $cstrong;
 $salt = openssl_random_pseudo_bytes(10, $cstrong);
-$connection = mysqli_connect("192.168.1.177","root","ccumming","cybersql");
+$connection = mysqli_connect("10.0.4.197","root","ccumming","sqlinjection");
 
 if (mysqli_connect_errno())
 {
