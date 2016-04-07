@@ -13,11 +13,11 @@ if (mysqli_connect_errno())
 else{
 	echo "Connected to MySQL Server" . PHP_EOL;
 }
-if (!mysqli_query($connection, "CREATE TABLE IF NOT EXISTS login_information (username VARCHAR(45), secret VARCHAR (45))"))
+if (!mysqli_query($connection, "CREATE TABLE IF NOT EXISTS login_information (username VARCHAR(45), password VARCHAR(45), secret VARCHAR (45))"))
   {
   echo "Error description: " . mysqli_error($connection);
   }
-if (!mysqli_query($connection, "INSERT INTO login_information (username, secret) VALUES ('".$username."', '".$secret."');"))
+if (!mysqli_query($connection, "INSERT INTO login_information (username, password secret) VALUES ('".$username."', '".$password."',  '".$secret."');"))
   {
   echo "Error description: " . mysqli_error($connection);
   }
