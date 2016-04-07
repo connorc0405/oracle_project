@@ -17,7 +17,7 @@ if (!mysqli_query($connection, "CREATE TABLE IF NOT EXISTS login_information (us
   {
   echo "Error description: " . mysqli_error($connection);
   }
-if (!mysqli_query($connection, "INSERT INTO login_information (username, password secret) VALUES ('".$username."', '".$password."',  '".$secret."');"))
+if (!mysqli_query($connection, "INSERT INTO login_information (username, password, secret) VALUES ('".$username."', '".$password."', '".$secret."');"))
   {
   echo "Error description: " . mysqli_error($connection);
   }
