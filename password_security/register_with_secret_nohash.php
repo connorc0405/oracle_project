@@ -13,7 +13,7 @@ if (mysqli_connect_errno())
 else{
 	echo "Connected to MySQL Server" . PHP_EOL;
 }
-if (!mysqli_query($connection, "CREATE TABLE IF NOT EXISTS login_information (username VARCHAR(45), secret VARCHAR (45),)"))
+if (!mysqli_query($connection, "CREATE TABLE IF NOT EXISTS login_information (username VARCHAR(45), secret VARCHAR (45),);"))
   {
   echo "Error description: " . mysqli_error($connection);
   }
