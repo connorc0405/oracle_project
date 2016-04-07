@@ -15,7 +15,6 @@ $row = mysqli_fetch_assoc($secret_object);
 $secret = $row['secret'];
 mysqli_close($connection);
 echo $input_username."'s secret is: ".$secret;
-echo "hi";
 ?>
 
 </html>
