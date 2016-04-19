@@ -5,7 +5,7 @@ $password = $_POST['password'];
 $secret = $_POST['secret'];
 $cstrong;
 $salt = openssl_random_pseudo_bytes(10, $cstrong);
-$connection = mysqli_connect("10.0.4.206","root","ccumming","sqlinjection");
+$connection = mysqli_connect("127.0.0.1","root","ccumming","sqlinjection");
 
 if (mysqli_connect_errno())
 {
@@ -18,7 +18,7 @@ if (!mysqli_query($connection, "CREATE TABLE IF NOT EXISTS login_information (us
   {
   echo "Error description: " . mysqli_error($connection);
   }
-if (!mysqli_query($connection, "INSERT INTO login_information (username, secret, hash, salt) VALUES ('".$username."', '".$secret."', sha2('".$password."".$salt."', 512), '".$salt."');"))
+if (!mysqli_query($connection, "INSERT INTO login_information (username, secret, hash, salt) VALUES ('".$username."', '".$secret."', sha2('".$password.$salt."', 512), '".$salt."');"))
   {
   echo "Error description: " . mysqli_error($connection);
   }

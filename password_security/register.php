@@ -4,7 +4,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 $cstrong;
 $salt = openssl_random_pseudo_bytes(10, $cstrong);
-$connection = mysqli_connect("192.168.1.177","root","ccumming","sqlinjection");
+$connection = mysqli_connect("127.0.0.1","root","ccumming","sqlinjection");
 if (mysqli_connect_errno())
 {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
